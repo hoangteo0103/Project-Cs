@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
 using namespace sf;
-
+con ga bui nguyen hoang
 int main()
 {
     srand(time(0));
