@@ -1,0 +1,56 @@
+1. Game window
+	- Start game window
+		+ Load previous game
+			+ Load information
+			+ Move to in game window
+		+ New game
+			+ Enter player name
+				+ Choose level
+					+ Easy
+					+ Medium
+					+ Hard
+					+ Custom
+						+ Move to in game window
+			+ Back to menu
+		+ Leaderboard
+			+ Information
+			+ Back to menu
+		+ Instruction
+			+ Information
+			+ Back to menu
+		+ Author
+			+ Information
+			+ Back to menu
+
+	- In game window
+		+ Player's name
+		+ Minesweeper board
+		+ Number of mines
+		+ Clock
+
+	- End game window
+		+ Win game / Lose game message
+		+ Show score
+		+ Back to start game window
+
+2. Game event
+	- Start game window
+		+ Load previous game
+		+ New game
+		+ Leaderboard
+		+ Instruction
+		+ Author
+
+	- In game window
+		+ Mouse button
+			+ Right click
+				+ Add/remove flag
+				+ Change number of mines
+			+ Left click
+				+ Reveal cell
+			+ Double left click
+				+ Reveal adjacent cells
+			+ Check 
+				+ If win / lose, move to end game window
+
+
