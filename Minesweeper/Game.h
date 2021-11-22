@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-#include "State.h"
+#include "GameState.h"
 using namespace sf;
 using namespace std;
 class Game
@@ -9,14 +9,14 @@ private:
     //Variables
     RenderWindow *app;
     Event sfEvent ;
+    stack<State*> states;
 
     //Initialization
     void initWindow();
-
+    void initStates();
 public:
     Game();
-    int w = 32;
-    virtual ~ Game() ;
+    virtual ~Game() ;
     // Functions
     void updateSFMLEvents() ;
     void update();

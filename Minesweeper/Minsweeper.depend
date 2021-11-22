@@ -1,22 +1,28 @@
 # depslib dependency file v1.0
-1637572515 source:d:\project\minesweeper\main.cpp
+1637587680 source:d:\project\minesweeper\main.cpp
 	"Game.h"
 
-1637572515 d:\project\minesweeper\game.h
-	"State.h"
+1637591569 d:\project\minesweeper\game.h
+	"GameState.h"
 
-1637570587 source:d:\project\minesweeper\game.cpp
+1637591764 source:d:\project\minesweeper\game.cpp
 	"Game.h"
 
 1637572569 source:d:\project\minesweeper\temp.cpp
 
-1637572593 d:\project\minesweeper\state.h
+1637591685 d:\project\minesweeper\state.h
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<SFML/System.hpp>
 	<time.h>
 	<bits/stdc++.h>
 
-1637572515 source:d:\project\minesweeper\state.cpp
+1637591678 source:d:\project\minesweeper\state.cpp
+	"State.h"
+
+1637591780 source:d:\project\minesweeper\gamestate.cpp
+	"GameState.h"
+
+1637591678 d:\project\minesweeper\gamestate.h
 	"State.h"
 

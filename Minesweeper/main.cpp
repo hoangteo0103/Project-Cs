@@ -4,6 +4,6 @@ int main()
 {
     srand(time(0));
     Game game;
-    game.run();
+    game.run() ;
     return 0;
 }

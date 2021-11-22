@@ -10,13 +10,15 @@ using namespace std;
 class State
 {
 private:
-    Texture t;
+    RenderWindow* app;
+
 public:
-    State();
+    State(RenderWindow* app);
     virtual ~State();
     // Functions
+    virtual void endState() = 0 ;
     virtual void update() = 0 ;
-    virtual void render() = 0 ;
+    virtual void render(RenderTarget* target = nullptr) = 0 ;
 
 };
 #endif
