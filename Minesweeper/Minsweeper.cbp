@@ -31,7 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="State.cpp" />
+		<Unit filename="State.h" />
+		<Unit filename="Temp.inp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="temp.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
