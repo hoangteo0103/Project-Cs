@@ -15,7 +15,7 @@ void GameState::endState()
 }
 void GameState::update()
 {
-
+    cout << 1 << endl;
 }
 void GameState::render(RenderTarget* target = nullptr)
 {
