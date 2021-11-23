@@ -26,33 +26,30 @@
 1637591678 d:\project\minesweeper\gamestate.h
 	"State.h"
 
-<<<<<<< HEAD
-1637593959 source:d:\project-cs-master\minesweeper\game.cpp
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\game.cpp
 	"Game.h"
 
-1637593959 d:\project-cs-master\minesweeper\game.h
+1637634513 c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\game.h
 	"GameState.h"
 
-1637593959 d:\project-cs-master\minesweeper\gamestate.h
+1637634513 c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\gamestate.h
 	"State.h"
 
-1637593959 d:\project-cs-master\minesweeper\state.h
+1637634513 c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\state.h
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<SFML/System.hpp>
 	<time.h>
 	<bits/stdc++.h>
 
-1637593959 source:d:\project-cs-master\minesweeper\gamestate.cpp
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\gamestate.cpp
 	"GameState.h"
 
-1637593959 source:d:\project-cs-master\minesweeper\main.cpp
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\main.cpp
 	"Game.h"
 
-1637593959 source:d:\project-cs-master\minesweeper\state.cpp
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\state.cpp
 	"State.h"
 
-1637593959 source:d:\project-cs-master\minesweeper\temp.cpp
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\temp.cpp
 
-=======
->>>>>>> 74e4053d321ff93f372da85e8c4b6e062dffa391
