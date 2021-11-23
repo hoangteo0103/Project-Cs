@@ -26,3 +26,30 @@
 1637591678 d:\project\minesweeper\gamestate.h
 	"State.h"
 
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\game.cpp
+	"Game.h"
+
+1637634513 c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\game.h
+	"GameState.h"
+
+1637634513 c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\gamestate.h
+	"State.h"
+
+1637634513 c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\state.h
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<time.h>
+	<bits/stdc++.h>
+
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\gamestate.cpp
+	"GameState.h"
+
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\main.cpp
+	"Game.h"
+
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\state.cpp
+	"State.h"
+
+1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\temp.cpp
+
