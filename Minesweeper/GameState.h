@@ -10,6 +10,7 @@ public:
     GameState(RenderWindow* app);
     virtual ~GameState();
     // Functions
+    void updateKeyBinds();
     void endState() ;
     void update() ;
     void render(RenderTarget* target) ;

@@ -18,6 +18,7 @@ public:
     Game();
     virtual ~Game() ;
     // Functions
+    void endApplication();
     void updateSFMLEvents() ;
     void update();
     void render();

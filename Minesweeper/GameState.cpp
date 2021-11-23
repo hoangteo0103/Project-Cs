@@ -9,13 +9,19 @@ GameState ::~GameState()
 {
 
 }
+void GameState::updateKeyBinds()
+{
+    this->checkForQuit() ;
+}
 void GameState::endState()
 {
-
+    cout <<"Ending " ;
 }
 void GameState::update()
 {
-    cout << 1 << endl;
+    this->updateKeyBinds();
+    if(Keyboard::isKeyPressed(Keyboard::A))
+        cout << "A" <<endl;
 }
 void GameState::render(RenderTarget* target = nullptr)
 {

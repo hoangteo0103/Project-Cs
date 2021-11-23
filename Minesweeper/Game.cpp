@@ -37,6 +37,10 @@ Game::~Game()
     }
 
 }
+void Game::endApplication()
+{
+    cout << 1 ;
+}
 void Game::updateSFMLEvents()
 {
 
@@ -51,7 +55,15 @@ void Game::update()
     this->updateSFMLEvents();
 
     if(!this->states.empty())
+    {
         this->states.top()->update();
+        if(this->states.top()->getQuit())
+        {
+            this->states.top()->endState();
+            delete this->states.top() ;
+            this->states.pop() ;
+        }
+    }
 }
 void Game::render()
 {
@@ -59,6 +71,11 @@ void Game::render()
 
     if(!this->states.empty())
         this->states.top()->render();
+    else
+    {
+        this->endApplication();
+        this->app->close();
+    }
     this->app->display();
 }
 void Game::run()
