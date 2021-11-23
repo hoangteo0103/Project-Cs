@@ -5,7 +5,6 @@ State::State(RenderWindow* app)
 {
     this->app = app ;
     this->quit = false;
-
 }
 State::~State()
 {

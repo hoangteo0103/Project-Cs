@@ -5,6 +5,7 @@ class GameState :
     public State
 {
 private:
+    Board board ;
 
 public:
     GameState(RenderWindow* app);

@@ -16,12 +16,11 @@ void GameState::endState()
 }
 void GameState::update()
 {
-    cout << "ga" << endl ;
+    //cout << "ga" << endl ;
     this->updateKeyBinds();
-    if(Keyboard::isKeyPressed(Keyboard::A))
-        cout << "A" <<endl;
+    this->board.update();
 }
-void GameState::render(RenderTarget* target = nullptr)
+void GameState::render(RenderTarget* target)
 {
-
+    this->board.render(this->app) ;
 }

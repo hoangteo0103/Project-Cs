@@ -1,15 +1,10 @@
 #ifndef STATE_H
 #define STATE_H
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-#include <time.h>
-#include<bits/stdc++.h>
-using namespace sf;
-using namespace std;
+
+#include "Board.h"
 class State
 {
-private:
+protected:
     RenderWindow* app;
     bool quit ;
 
