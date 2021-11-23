@@ -6,7 +6,6 @@ State::State(RenderWindow* app)
     this->app = app ;
     this->quit = false;
 
-
 }
 State::~State()
 {
@@ -17,7 +16,7 @@ const bool& State::getQuit() const
 }
 void State::checkForQuit()
 {
-    if(Keyboard::isKeyPressed(Keyboard::Enter))
+    if(Keyboard::isKeyPressed(Keyboard::Escape))
     {
         this->quit = true ;
     }

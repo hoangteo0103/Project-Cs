@@ -36,6 +36,8 @@
 		<Unit filename="Game.h" />
 		<Unit filename="GameState.cpp" />
 		<Unit filename="GameState.h" />
+		<Unit filename="MainMenuState.cpp" />
+		<Unit filename="MainMenuState.h" />
 		<Unit filename="State.cpp" />
 		<Unit filename="State.h" />
 		<Unit filename="Temp.inp" />

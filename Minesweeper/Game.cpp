@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "MainMenuState.h"
 using namespace std;
 using namespace sf;
 //Static Functions
@@ -19,6 +20,7 @@ void Game::initWindow()
 void Game::initStates()
 {
     this->states.push(new GameState(this->app)) ;
+    this->states.push(new MainMenuState(this->app)) ;
 }
 
 // Constructor functions
@@ -68,7 +70,7 @@ void Game::update()
 void Game::render()
 {
     this->app->clear();
-
+    cout << this->states.top()->getQuit() << ' ' <<this->states.size() << endl;
     if(!this->states.empty())
         this->states.top()->render();
     else
