@@ -26,6 +26,7 @@
 1637591678 d:\project\minesweeper\gamestate.h
 	"State.h"
 
+<<<<<<< HEAD
 1637593959 source:d:\project-cs-master\minesweeper\game.cpp
 	"Game.h"
 
@@ -53,3 +54,5 @@
 
 1637593959 source:d:\project-cs-master\minesweeper\temp.cpp
 
+=======
+>>>>>>> 74e4053d321ff93f372da85e8c4b6e062dffa391
