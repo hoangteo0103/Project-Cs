@@ -1,10 +1,7 @@
 #include "GameState.h"
 
 GameState::GameState(RenderWindow* app)
-    :State(app)
-{
-
-}
+    :State(app){}
 GameState ::~GameState()
 {
 
@@ -15,10 +12,11 @@ void GameState::updateKeyBinds()
 }
 void GameState::endState()
 {
-    cout <<"Ending " ;
+    cout <<"Ending GameState" ;
 }
 void GameState::update()
 {
+    cout << "ga" << endl ;
     this->updateKeyBinds();
     if(Keyboard::isKeyPressed(Keyboard::A))
         cout << "A" <<endl;

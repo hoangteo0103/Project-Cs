@@ -11,7 +11,7 @@ class State
 {
 private:
     RenderWindow* app;
-    bool quit  ;
+    bool quit ;
 
 public:
     State(RenderWindow* app);

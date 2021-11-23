@@ -12,16 +12,15 @@ MainMenuState ::~MainMenuState()
 }
 void MainMenuState::updateKeyBinds()
 {
-
+    this->checkForQuit() ;
 }
 void MainMenuState::endState()
 {
-
+    cout <<"End MainMenu"<<endl;
 }
 void MainMenuState::update()
 {
-    this->checkForQuit() ;
-    //cout << 1 << endl;
+    this->updateKeyBinds();
 }
 void MainMenuState::render(RenderTarget* target)
 {

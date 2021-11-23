@@ -41,7 +41,7 @@ Game::~Game()
 }
 void Game::endApplication()
 {
-    cout << 1 ;
+    cout << "Ending application" << endl ;
 }
 void Game::updateSFMLEvents()
 {
@@ -72,14 +72,10 @@ void Game::update()
 void Game::render()
 {
     this->app->clear();
-
-
-
     if(!this->states.empty())
         this->states.top()->render();
     else
     {
-
 
         this->endApplication();
         this->app->close();
