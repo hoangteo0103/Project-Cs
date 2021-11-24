@@ -19,8 +19,8 @@ void Game::initWindow()
 }
 void Game::initStates()
 {
-    this->states.push(new GameState(this->app)) ;
-    this->states.push(new MainMenuState(this->app)) ;
+
+    this->states.push(new MainMenuState(this->app , &this->states)) ;
 }
 
 // Constructor functions

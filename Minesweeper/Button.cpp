@@ -12,8 +12,8 @@ Button::Button(float x , float y , float width , float height , Font* font ,
     this->text.setFillColor(Color :: White);
     this->text.setCharacterSize(12);
     this->text.setPosition(
-        this->shape.getPosition().x/2.f - this->text.getGlobalBounds().width/2,
-        this->shape.getPosition().y/2.f - this->text.getGlobalBounds().height/2
+        this->shape.getPosition().x +(this->shape.getGlobalBounds().width/2.f) - this->text.getGlobalBounds().width/2.f,
+        this->shape.getPosition().y +(this->shape.getGlobalBounds().height/2.f)- this->text.getGlobalBounds().height/2.f
     );
 
     this->idleColor = idleColor ;
@@ -42,17 +42,27 @@ void Button::update(const Vector2f mousePos)
     switch(this->buttonState)
     {
     case BTN_IDLE:
+        this->shape.setFillColor(this->idleColor);
         break;
     case BTN_HOVER:
+        this->shape.setFillColor(this->hoverColor);
         break;
     case BTN_ACTIVE:
+        this->shape.setFillColor(this->activeColor);
         break;
-    default :
+    default : this->shape.setFillColor(Color::Red);
         break;
     }
+}
+const bool Button::isPressed() const
+{
+    if(this->buttonState == BTN_ACTIVE)
+        return true ;
+    return false;
 }
 void Button::render(RenderTarget* target)
 {
     target->draw(this->shape) ;
+    target->draw(this->text);
 }
 

@@ -5,13 +5,14 @@
 class State
 {
 protected:
+    stack<State*> *states;
     RenderWindow* app;
     bool quit ;
     Vector2i mousePosWindow ;
     Vector2f mousePosView  ;
 
 public:
-    State(RenderWindow* app);
+    State(RenderWindow* app, stack<State*> *states);
     virtual ~State();
     // Functions
     const bool& getQuit() const ;

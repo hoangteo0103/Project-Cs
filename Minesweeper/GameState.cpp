@@ -1,7 +1,7 @@
 #include "GameState.h"
 
-GameState::GameState(RenderWindow* app)
-    :State(app){}
+GameState::GameState(RenderWindow* app ,  stack<State*> *states)
+    :State(app,states){}
 GameState ::~GameState()
 {
 

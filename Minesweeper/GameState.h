@@ -8,7 +8,7 @@ private:
     Board board ;
 
 public:
-    GameState(RenderWindow* app);
+    GameState(RenderWindow* app , stack<State*> *states);
     virtual ~GameState();
     // Functions
     void updateKeyBinds();

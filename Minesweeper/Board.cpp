@@ -44,7 +44,7 @@ void Board::render(RenderTarget* target )
     for (int i=1;i<=10;i++)
          for (int j=1;j<=10;j++)
           {
-           if (sgrid[this->x][this->y]==9) sgrid[i][j]=grid[i][j];
+           //if (sgrid[this->x][this->y]==9) sgrid[i][j]=grid[i][j];
            s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
            s.setPosition(i*w, j*w);
            target->draw(s);
