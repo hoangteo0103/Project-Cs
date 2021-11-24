@@ -2,14 +2,14 @@
 #define MAINMENUSTATE_H
 
 #include "State.h"
-
-
+#include "Button.h"
 class MainMenuState :
     public State
 {
 private:
-    RectangleShape background;
-
+    RectangleShape background ;
+    Font font ;
+    void initFonts();
 public:
     MainMenuState(RenderWindow* app);
     virtual ~MainMenuState();
@@ -17,7 +17,7 @@ public:
     void updateKeyBinds();
     void endState() ;
     void update() ;
-    void render(RenderTarget* target) ;
+    void render(RenderTarget* target = NULL) ;
 
 };
 

@@ -33,6 +33,8 @@
 		</Compiler>
 		<Unit filename="Board.cpp" />
 		<Unit filename="Board.h" />
+		<Unit filename="Button.cpp" />
+		<Unit filename="Button.h" />
 		<Unit filename="Data/window.ini" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />

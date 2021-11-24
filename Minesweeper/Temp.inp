@@ -53,7 +53,7 @@
            s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
            s.setPosition(i*w, j*w);
            this->app->draw(s);
-          }
+          }M
 
         this->app->display();
     }

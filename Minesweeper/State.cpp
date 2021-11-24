@@ -9,6 +9,11 @@ State::State(RenderWindow* app)
 State::~State()
 {
 }
+void State::updateMousePositions()
+{
+    this->mousePosWindow = Mouse::getPosition(*this->app) ;
+    this->mousePosView = this->app->mapPixelToCoords(Mouse::getPosition(*this->app)) ;
+}
 const bool& State::getQuit() const
 {
     return this->quit;

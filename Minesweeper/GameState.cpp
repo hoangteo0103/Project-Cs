@@ -16,9 +16,10 @@ void GameState::endState()
 }
 void GameState::update()
 {
-    //cout << "ga" << endl ;
+    this->updateMousePositions() ;
     this->updateKeyBinds();
-    this->board.update();
+    //if(Mouse::isButtonPressed(Mouse::Left))
+    //this->board.update(mousePosWindow.x , mousePosWindow.y) ;
 }
 void GameState::render(RenderTarget* target)
 {

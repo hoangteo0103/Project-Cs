@@ -15,6 +15,7 @@ protected:
     Texture t ;
     Sprite s ;
     int w = 32 ;
+    int x , y ;
     int grid[12][12];
     int sgrid[12][12];
 public :

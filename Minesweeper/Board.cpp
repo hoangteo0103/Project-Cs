@@ -36,18 +36,15 @@ Board::~Board()
 }
 void Board::update()
 {
-    //Vector2i pos = Mouse::getPosition(*this->app) ;
-    //int x = pos.x/w;
-    //int y = pos.y/w;
-
-
+    //this->x = x;
+    //this->y = y;
 }
 void Board::render(RenderTarget* target )
 {
     for (int i=1;i<=10;i++)
          for (int j=1;j<=10;j++)
           {
-           //if (sgrid[x][y]==9) sgrid[i][j]=grid[i][j];
+           if (sgrid[this->x][this->y]==9) sgrid[i][j]=grid[i][j];
            s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
            s.setPosition(i*w, j*w);
            target->draw(s);
