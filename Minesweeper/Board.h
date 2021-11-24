@@ -14,6 +14,7 @@ private :
 protected:
     Texture t ;
     Sprite s ;
+    Vector2f mousePosView;
     int w = 32 ;
     int x , y ;
     int grid[12][12];
@@ -21,7 +22,7 @@ protected:
 public :
     Board();
     virtual ~Board() ;
-    virtual void update() ;
+    virtual void update(Vector2f mousPosView) ;
     virtual void render(RenderTarget* target ) ;
 };
 

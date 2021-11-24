@@ -34,19 +34,24 @@ Board::~Board()
 {
 
 }
-void Board::update()
+void Board::update(Vector2f mousePosView)
 {
-    //this->x = x;
-    //this->y = y;
+    this->mousePosView = mousePosView ;
 }
 void Board::render(RenderTarget* target )
 {
     for (int i=1;i<=10;i++)
          for (int j=1;j<=10;j++)
           {
-           //if (sgrid[this->x][this->y]==9) sgrid[i][j]=grid[i][j];
-           s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
-           s.setPosition(i*w, j*w);
+           this->s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
+           this->s.setPosition(i*w, j*w);
+           if(this->s.getGlobalBounds().contains(mousePosView))
+           {
+            if(Mouse::isButtonPressed(Mouse::Left))
+            sgrid[i][j] = grid[i][j];
+            if(Mouse::isButtonPressed(Mouse::Right)) sgrid[i][j] = 11 ;
+           }
+           this->s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
            target->draw(s);
           }
 }
