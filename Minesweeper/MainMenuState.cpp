@@ -95,3 +95,4 @@ void MainMenuState::render(RenderTarget* target )
     this->renderButtons(target);
 }
 
+

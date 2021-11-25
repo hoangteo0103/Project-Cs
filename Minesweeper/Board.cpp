@@ -79,3 +79,4 @@ void Board::render(RenderTarget* target )
         }
     x = 0, y = 0 ;
 }
+

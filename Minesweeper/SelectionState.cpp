@@ -1,6 +1,7 @@
 
 #include "SelectionState.h"
 
+
 void SelectionState::initFonts()
 {
     if(!this->font.loadFromFile("font/Contb.ttf"))
@@ -78,4 +79,5 @@ void SelectionState::render(RenderTarget* target )
        target = this->app;
     this->renderButtons(target);
 }
+
 

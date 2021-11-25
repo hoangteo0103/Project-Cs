@@ -2,56 +2,56 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Minsweeper" />
+		<Option title="Test" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Minsweeper" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/Test" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="C:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/include" />
 				</Compiler>
 				<Linker>
-					<Add library="sfml-graphics-d" />
-					<Add library="sfml-audio-d" />
-					<Add library="sfml-window-d" />
 					<Add library="sfml-network-d" />
+					<Add library="sfml-audio-d" />
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
 					<Add library="sfml-system-d" />
-					<Add directory="C:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Minsweeper" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/Test" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="C:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="sfml-graphics" />
-					<Add library="sfml-audio" />
-					<Add library="sfml-window" />
 					<Add library="sfml-network" />
+					<Add library="sfml-audio" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
 					<Add library="sfml-system" />
-					<Add directory="C:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/lib" />
+					<Add library="opengl32" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="C:/SFML-2.5.1/include" />
 		</Compiler>
+		<Linker>
+			<Add directory="C:/SFML-2.5.1/lib" />
+		</Linker>
 		<Unit filename="Board.cpp" />
 		<Unit filename="Board.h" />
 		<Unit filename="Button.cpp" />
 		<Unit filename="Button.h" />
-		<Unit filename="Data/window.ini" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="GameState.cpp" />
@@ -62,11 +62,7 @@
 		<Unit filename="SelectionState.h" />
 		<Unit filename="State.cpp" />
 		<Unit filename="State.h" />
-		<Unit filename="Temp.inp" />
 		<Unit filename="main.cpp" />
-		<Unit filename="output.ini" />
-		<Unit filename="temp.cpp" />
-		<Unit filename="window.ouo" />
 		<Extensions>
 			<code_completion />
 			<envvars />

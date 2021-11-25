@@ -67,3 +67,4 @@ void Button::render(RenderTarget* target)
     target->draw(this->text);
 }
 
+
