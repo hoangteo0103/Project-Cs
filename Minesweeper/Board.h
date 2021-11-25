@@ -19,8 +19,8 @@ protected:
     int x, y ;
     int sizeX , sizeY ;
     int numberOfBombs ;
-    int grid[12][12];
-    int sgrid[12][12];
+    int grid[50][50];
+    int sgrid[50][50];
 
 public :
     Board();
