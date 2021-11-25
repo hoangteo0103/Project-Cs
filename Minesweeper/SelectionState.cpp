@@ -1,23 +1,27 @@
-#include "GameState.h"
 
-void GameState::initFonts()
+#include "SelectionState.h"
+
+void SelectionState::initFonts()
 {
     if(!this->font.loadFromFile("font/Contb.ttf"))
     {
 
     }
 }
-GameState::GameState(RenderWindow* app ,  stack<State*> *states)
+SelectionState::SelectionState(RenderWindow* app ,  stack<State*> *states)
     :State(app,states)
 {
     this->initFonts() ;
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(600, 0 , 200 , 50 ,
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(100,100 , 150 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)
+                                 ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
+    this->buttons["GAME_STATE"] = new Button(150, 150 , 150 , 50 ,
+                                     &this->font , "Play" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
 
 }
 
-GameState ::~GameState()
+SelectionState ::~SelectionState()
 {
    auto it = this->buttons.begin();
    for(it = this->buttons.begin(); it!=this->buttons.end() ; ++it)
@@ -25,16 +29,15 @@ GameState ::~GameState()
        delete it->second;
    }
 }
-
-void GameState::updateKeyBinds()
+void SelectionState::updateKeyBinds()
 {
     this->checkForQuit() ;
 }
-void GameState::endState()
+void SelectionState::endState()
 {
     cout <<"End MainMenu"<<endl;
 }
-void GameState::updateButtons()
+void SelectionState::updateButtons()
 {
     for(auto &it : this->buttons)
     {
@@ -43,37 +46,36 @@ void GameState::updateButtons()
     if(this->buttons["BACK_TO_MENU_STATE"]->isPressed())
     {
         this->quit = true ;
-
-        //this->states->push(new GameState(this->app , this->states)) ;
     }
-    //if(this->buttons["GAME_QUIT_BTN"]->isPressed())
-    //{
-    //    this->quit = true ;
-    //}
+    if(this->buttons["GAME_STATE"]->isPressed())
+    {
+       this->states->push(new GameState(this->app , this->states)) ;
+        this->quit = true ;
+    }
 }
 
-void GameState::update()
+void SelectionState::update()
 {
+
     this->updateMousePositions() ;
     this->updateKeyBinds();
     this->updateButtons() ;
-    this->board.update(this->mousePosView) ;
+
     //system("cls") ;
-    //cout << mousePosView.x <<' ' << mousePosView.y <<endl;
+        //cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 
 }
-void GameState::renderButtons(RenderTarget* target )
+void SelectionState::renderButtons(RenderTarget* target )
 {
     for(auto &it : this->buttons)
     {
         it.second->render(target);
     }
 }
-void GameState::render(RenderTarget* target )
+void SelectionState::render(RenderTarget* target )
 {
     if (!target)
        target = this->app;
-    this->board.render(target);
     this->renderButtons(target);
 }
 

@@ -20,7 +20,7 @@ void Game::initWindow()
 void Game::initStates()
 {
 
-    this->states.push(new MainMenuState(this->app , &this->states)) ;
+    this->states.push(new MainMenuState(this->app, &this->states)) ;
 }
 
 // Constructor functions
@@ -46,11 +46,11 @@ void Game::endApplication()
 void Game::updateSFMLEvents()
 {
 
-        while (this->app->pollEvent(this->sfEvent))
-        {
-            if (this->sfEvent.type == Event::Closed)
-                this->app->close();
-        }
+    while (this->app->pollEvent(this->sfEvent))
+    {
+        if (this->sfEvent.type == Event::Closed)
+            this->app->close();
+    }
 }
 void Game::update()
 {

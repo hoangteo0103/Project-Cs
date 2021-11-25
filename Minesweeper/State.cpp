@@ -1,7 +1,7 @@
 #include "State.h"
 using namespace std;
 using namespace sf;
-State::State(RenderWindow* app , stack<State*> *states)
+State::State(RenderWindow* app, stack<State*> *states)
 {
     this->app = app ;
     this->states = states;

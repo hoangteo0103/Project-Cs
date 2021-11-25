@@ -1,7 +1,7 @@
 #ifndef MAINMENUSTATE_H
 #define MAINMENUSTATE_H
 
-#include "State.h"
+#include "SelectionState.h"
 #include "GameState.h"
 #include "Button.h"
 class MainMenuState :
@@ -11,12 +11,12 @@ private:
 
     RectangleShape background ;
     Font font ;
-    map<string , Button* > buttons;
+    map<string, Button* > buttons;
     void initFonts();
     void initButtons() ;
 
 public:
-    MainMenuState(RenderWindow* app , stack<State*> *states);
+    MainMenuState(RenderWindow* app, stack<State*> *states);
     virtual ~MainMenuState();
     // Functions
     void updateKeyBinds();
