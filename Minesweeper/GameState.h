@@ -8,13 +8,13 @@ class GameState :
 {
 private:
     Board board ;
-    map<string , Button* > buttons;
+    map<string, Button* > buttons;
     Font font ;
     void initFonts();
     void initButtons();
 
 public:
-    GameState(RenderWindow* app , stack<State*> *states);
+    GameState(RenderWindow* app, stack<State*> *states);
     virtual ~GameState();
     // Functions
     void updateKeyBinds();

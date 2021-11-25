@@ -42,6 +42,8 @@
 		<Unit filename="GameState.h" />
 		<Unit filename="MainMenuState.cpp" />
 		<Unit filename="MainMenuState.h" />
+		<Unit filename="SelectionState.cpp" />
+		<Unit filename="SelectionState.h" />
 		<Unit filename="State.cpp" />
 		<Unit filename="State.h" />
 		<Unit filename="Temp.inp" />

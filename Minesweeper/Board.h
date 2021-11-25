@@ -16,9 +16,10 @@ protected:
     Sprite s ;
     Vector2f mousePosView;
     int w = 32 ;
-    int x , y ;
+    int x, y ;
     int grid[12][12];
     int sgrid[12][12];
+    void initBoard() ;
 public :
     Board();
     virtual ~Board() ;

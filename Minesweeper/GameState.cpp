@@ -43,6 +43,7 @@ void GameState::updateButtons()
     if(this->buttons["BACK_TO_MENU_STATE"]->isPressed())
     {
         this->quit = true ;
+
         //this->states->push(new GameState(this->app , this->states)) ;
     }
     //if(this->buttons["GAME_QUIT_BTN"]->isPressed())
@@ -57,8 +58,8 @@ void GameState::update()
     this->updateKeyBinds();
     this->updateButtons() ;
     this->board.update(this->mousePosView) ;
-    system("cls") ;
-    cout << mousePosView.x <<' ' << mousePosView.y <<endl;
+    //system("cls") ;
+    //cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 
 }
 void GameState::renderButtons(RenderTarget* target )

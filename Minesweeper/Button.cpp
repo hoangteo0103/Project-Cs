@@ -1,11 +1,11 @@
 #include "Button.h"
 
-Button::Button(float x , float y , float width , float height , Font* font ,
-           string text ,Color idleColor,Color hoverColor , Color activeColor)
+Button::Button(float x, float y, float width, float height, Font* font,
+               string text,Color idleColor,Color hoverColor, Color activeColor)
 {
     this->buttonState = BTN_IDLE ;
     this->shape.setPosition(Vector2f(x,y)) ;
-    this->shape.setSize(Vector2f(width , height));
+    this->shape.setSize(Vector2f(width, height));
     this->font = font ;
     this->text.setFont(*this->font) ;
     this->text.setString(text) ;
@@ -50,7 +50,8 @@ void Button::update(const Vector2f mousePos)
     case BTN_ACTIVE:
         this->shape.setFillColor(this->activeColor);
         break;
-    default : this->shape.setFillColor(Color::Red);
+    default :
+        this->shape.setFillColor(Color::Red);
         break;
     }
 }

@@ -53,50 +53,50 @@
 
 1637634513 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\temp.cpp
 
-1637767189 source:d:\project-cs-master\minesweeper\game.cpp
+1637810436 source:d:\project-cs-master\minesweeper\game.cpp
 	"Game.h"
 	"MainMenuState.h"
 
 1637677681 d:\project-cs-master\minesweeper\game.h
 	"GameState.h"
 
-1637769014 d:\project-cs-master\minesweeper\gamestate.h
+1637810436 d:\project-cs-master\minesweeper\gamestate.h
 	"State.h"
 	"Button.h"
 
-1637767274 d:\project-cs-master\minesweeper\state.h
+1637812897 d:\project-cs-master\minesweeper\state.h
 	"Board.h"
 
-1637769051 source:d:\project-cs-master\minesweeper\gamestate.cpp
+1637813952 source:d:\project-cs-master\minesweeper\gamestate.cpp
 	"GameState.h"
 
 1637670015 source:d:\project-cs-master\minesweeper\main.cpp
 	"Game.h"
 
-1637767297 source:d:\project-cs-master\minesweeper\state.cpp
+1637812912 source:d:\project-cs-master\minesweeper\state.cpp
 	"State.h"
 
 1637593959 source:d:\project-cs-master\minesweeper\temp.cpp
 
-1637767244 d:\project-cs-master\minesweeper\mainmenustate.h
-	"State.h"
+1637810931 d:\project-cs-master\minesweeper\mainmenustate.h
+	"SelectionState.h"
 	"GameState.h"
 	"Button.h"
 
-1637767284 source:d:\project-cs-master\minesweeper\mainmenustate.cpp
+1637813906 source:d:\project-cs-master\minesweeper\mainmenustate.cpp
 	"MainMenuState.h"
 
-1637768462 d:\project-cs-master\minesweeper\board.h
+1637810436 d:\project-cs-master\minesweeper\board.h
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<SFML/System.hpp>
 	<time.h>
 	<bits/stdc++.h>
 
-1637768597 source:d:\project-cs-master\minesweeper\board.cpp
+1637810651 source:d:\project-cs-master\minesweeper\board.cpp
 	"Board.h"
 
-1637765493 source:d:\project-cs-master\minesweeper\button.cpp
+1637810436 source:d:\project-cs-master\minesweeper\button.cpp
 	"Button.h"
 
 1637764915 d:\project-cs-master\minesweeper\button.h
@@ -105,4 +105,13 @@
 	<SFML/System.hpp>
 	<time.h>
 	<bits/stdc++.h>
+
+1637813553 d:\project-cs-master\minesweeper\selectionstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+	"MainMenuState.h"
+
+1637813673 source:d:\project-cs-master\minesweeper\selectionstate.cpp
+	"SelectionState.h"
 
