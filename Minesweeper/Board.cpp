@@ -6,6 +6,7 @@ void Board::initBoard()
     for (int i=1; i<=this->sizeX; i++)
         for (int j=1; j<=this->sizeY; j++)
         {
+            onDisplay[i][j] = false;
             sgrid[i][j]=10;
             if (rand()%5==0&& this->numberOfBombs > numNow)
                 grid[i][j]=9, numNow++;
@@ -55,16 +56,19 @@ Board::~Board()
 }
 void Board::openNeighbour(int u,int v)
 {
-    if( u > this->sizeX || v > this->sizeY || v < 1 || u < 1)
-        return ;
-    cout << u << ' ' << v << endl;
-    if(grid[u][v]!=9)
+
+    if( u < 1 || v < 1 || u > this->sizeX || v > this->sizeY) ;
+    if(onDisplay[u][v]) return ;
+    if(grid[u][v] == 10 || sgrid[u][v] == 11 ) return ;
+    if(grid[u][v]<=8)
     {
         if(sgrid[u][v]==10)
         {
             sgrid[u][v] = grid[u][v] ;
         }
+        else return ;
     }
+    onDisplay[u][v] = true ;
     if(grid[u][v] == 0 && sgrid[u][v] == 0 )
     {
         this->openNeighbour(u + 1, v );
@@ -87,18 +91,23 @@ void Board::update(Vector2f mousePosView)
             this->s.setPosition(i*w, j*w);
             if(this->s.getGlobalBounds().contains(mousePosView))
             {
-                x = i, y = j ;
                 if(Mouse::isButtonPressed(Mouse::Left))
-                    sgrid[i][j] = grid[i][j];
-                if(Mouse::isButtonPressed(Mouse::Right))
                 {
-                    sgrid[i][j] = sgrid[i][j]==11 ? 10 : 11 ;
-                }
-                break ;
-                if(sgrid[x][y] == 0 )
-                {
+                    x = i, y = j ;
+                    if(grid[x][y] == 9)
+                    {
+                    sgrid[x][y] = 9 ;
+                    continue ;
+                    }
                     this->openNeighbour( x,y) ;
                 }
+                if(Mouse::isButtonPressed(Mouse::Right))
+                {
+                    x = i, y = j ;
+                    sgrid[i][j] = (sgrid[i][j]==11) ? 10 : 11 ;
+                }
+                break ;
+
             }
         }
 }
