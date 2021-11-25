@@ -10,11 +10,12 @@ private:
     Board board ;
     map<string, Button* > buttons;
     Font font ;
+    int sizeX , sizeY ;
     void initFonts();
     void initButtons();
 
 public:
-    GameState(RenderWindow* app, stack<State*> *states);
+    GameState(RenderWindow* app, stack<State*> *states ,int sizeX , int sizeY);
     virtual ~GameState();
     // Functions
     void updateKeyBinds();

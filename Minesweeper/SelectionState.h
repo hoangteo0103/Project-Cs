@@ -13,13 +13,15 @@ private:
 
     map<string, Button* > buttons;
     Font font ;
+
     int Sz_x , Sz_y ;
     int numberOfBombs;
     void initFonts();
     void initButtons();
 
 public:
-    SelectionState(RenderWindow* app, stack<State*> *states);
+    SelectionState(RenderWindow* app, stack<State*> *
+                   );
     virtual ~SelectionState();
     // Functions
     void updateKeyBinds();

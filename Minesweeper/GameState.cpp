@@ -7,9 +7,11 @@ void GameState::initFonts()
 
     }
 }
-GameState::GameState(RenderWindow* app ,  stack<State*> *states)
+GameState::GameState(RenderWindow* app ,  stack<State*> *states , int sizeX , int sizeY)
     :State(app,states)
 {
+    this->sizeX = sizeX ;
+    this->sizeY = sizeY;
     this->initFonts() ;
     this->buttons["BACK_TO_MENU_STATE"] = new Button(600, 0 , 200 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)

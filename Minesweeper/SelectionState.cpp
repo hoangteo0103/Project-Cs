@@ -13,7 +13,7 @@ SelectionState::SelectionState(RenderWindow* app ,  stack<State*> *states)
     :State(app,states)
 {
     this->initFonts() ;
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(100,100 , 150 , 50 ,
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(0,0, 150 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
     this->buttons["GAME_STATE"] = new Button(150, 150 , 150 , 50 ,
@@ -50,7 +50,7 @@ void SelectionState::updateButtons()
     }
     if(this->buttons["GAME_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states)) ;
+       this->states->push(new GameState(this->app , this->states , 0 , 0)) ;
         this->quit = true ;
     }
 }
@@ -62,8 +62,8 @@ void SelectionState::update()
     this->updateKeyBinds();
     this->updateButtons() ;
 
-    //system("cls") ;
-        //cout << mousePosView.x <<' ' << mousePosView.y <<endl;
+    system("cls") ;
+    cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 
 }
 void SelectionState::renderButtons(RenderTarget* target )
