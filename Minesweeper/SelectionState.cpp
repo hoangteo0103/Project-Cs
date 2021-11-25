@@ -16,8 +16,17 @@ SelectionState::SelectionState(RenderWindow* app ,  stack<State*> *states)
     this->buttons["BACK_TO_MENU_STATE"] = new Button(0,0, 150 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
-    this->buttons["GAME_STATE"] = new Button(150, 150 , 150 , 50 ,
-                                     &this->font , "Play" , Color(70,70,70,200)
+
+    this->buttons["BEGINNER_STATE"] = new Button(150, 150 , 150 , 50 ,
+                                     &this->font , "Beginner" , Color(70,70,70,200)
+                                 ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
+
+    this->buttons["INTERMEDIATE_STATE"] = new Button(150, 210 , 150 , 50 ,
+                                     &this->font , "Intermediate" , Color(70,70,70,200)
+                                 ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
+
+    this->buttons["EXPERT_STATE"] = new Button(150, 270 , 150 , 50 ,
+                                     &this->font , "Expert" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
 
 }
@@ -48,9 +57,21 @@ void SelectionState::updateButtons()
     {
         this->quit = true ;
     }
-    if(this->buttons["GAME_STATE"]->isPressed())
+    if(this->buttons["BEGINNER_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states , 0 , 0)) ;
+       this->states->push(new GameState(this->app , this->states , 9 , 9)) ;
+        this->quit = true ;
+    }
+
+    if(this->buttons["INTERMEDIATE_STATE"]->isPressed())
+    {
+       this->states->push(new GameState(this->app , this->states , 16 , 16)) ;
+        this->quit = true ;
+    }
+
+    if(this->buttons["EXPERT_STATE"]->isPressed())
+    {
+       this->states->push(new GameState(this->app , this->states , 30 , 16)) ;
         this->quit = true ;
     }
 }
