@@ -27,6 +27,9 @@ protected:
 public :
     Board();
     virtual ~Board() ;
+    virtual void checkWin();
+    const bool& getLose() const ;
+    const bool& getWin() const ;
     virtual void openNeighbour(int u ,int v);
     virtual void initSize(int width , int height , int numberOfBombs) ;
     virtual void initBoard() ;

@@ -64,6 +64,10 @@ void MainMenuState::updateButtons()
     {
         this->states->push(new SelectionState(this->app, this->states)) ;
     }
+    if(this->buttons["HIGH_SCORE_BTN"]->isPressed())
+    {
+        this->states->push(new LeaderboardState(this->app, this->states)) ;
+    }
     if(this->buttons["GAME_QUIT_BTN"]->isPressed())
     {
         this->quit = true ;

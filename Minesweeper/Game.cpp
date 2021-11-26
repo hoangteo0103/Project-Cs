@@ -9,6 +9,7 @@ void Game::initWindow()
 {
     ifstream ifs("Data/window.ini") ;
     string title = "NONE";
+
     VideoMode Size(400,400);
     if(ifs.is_open())
     {

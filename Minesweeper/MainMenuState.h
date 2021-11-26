@@ -1,9 +1,9 @@
 #ifndef MAINMENUSTATE_H
 #define MAINMENUSTATE_H
-
+#include "LeaderboardState.h"
 #include "SelectionState.h"
+
 #include "GameState.h"
-#include "Button.h"
 class MainMenuState :
     public State
 {

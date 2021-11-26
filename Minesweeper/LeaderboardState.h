@@ -1,26 +1,22 @@
-#ifndef SelectionState_H
-#define SelectionState_H
+#ifndef LEADERBOARDSTATE_H
+#define LeaderboardState_H
 #include "State.h"
 #include "Button.h"
 #include "GameState.h"
 
-class SelectionState :
+class LeaderboardState :
     public State
 {
 private:
-    Board board ;
 
     map<string, Button* > buttons;
     Font font ;
-
-    int sizeX , sizeY ;
-    int numberOfBombs;
     void initFonts();
     void initButtons();
 
 public:
-    SelectionState(RenderWindow* app, stack<State*> *states);
-    virtual ~SelectionState();
+    LeaderboardState(RenderWindow* app, stack<State*> *states);
+    virtual ~LeaderboardState();
     // Functions
     void updateKeyBinds();
     void updateButtons();
@@ -31,6 +27,7 @@ public:
 
 };
 #endif
+
 
 
 

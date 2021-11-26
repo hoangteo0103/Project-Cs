@@ -10,6 +10,7 @@ void GameState::initFonts()
 GameState::GameState(RenderWindow* app ,  stack<State*> *states , int sizeX , int sizeY , int numberOfBombs)
     :State(app,states)
 {
+
     this->initFonts() ;
     this->sizeX = sizeX ;
     this->sizeY = sizeY;
@@ -38,11 +39,11 @@ GameState ::~GameState()
 }
 const bool& GameState::getLose() const
 {
-    return this->board->isLose;
+    return this->board.getLose();
 }
 const bool& GameState::getWin() const
 {
-    return this->board->isWin;
+    return this->board.getWin();
 }
 void GameState::updateKeyBinds()
 {
@@ -72,11 +73,30 @@ void GameState::updateButtons()
 
 void GameState::update()
 {
+    if(this->getWin())
+    {
+        Time t = clock.getElapsedTime() ;
+        ifstream ifs("Leaderboard/leaderboard.ini") ;
+        int time_now = int(t.asSeconds());
+        int bomb_now = this->numberOfBombs ;
+        vector<pair<int ,int > > tmp;
+        tmp.push_back({bomb_now , time_now}) ;
+        int bomb ,time ;
+        while(ifs >> bomb >> time)
+        {
+            tmp.push_back({bomb , time});
+        }
+        sort(tmp.rbegin() , tmp.rend());
+        ofstream ofs("Leaderboard/leaderboard.ini") ;
+        for(int i = 0 ; i < min(10 , (int) tmp.size()) ; i++)
+        {
+            ofs << tmp[i].first << ' ' << tmp[i].second << endl;
+        }
+        exit(0);
+    }
     if(this->getLose())
     {
-
-
-
+        exit(0) ;
     }
     this->updateMousePositions() ;
     this->updateKeyBinds();
@@ -86,8 +106,6 @@ void GameState::update()
     ssTime.str("");
     ssTime <<"Time " <<int(t.asSeconds());
     this->lblTime.setString(ssTime.str());
-
-
     system("cls") ;
     cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 

@@ -56,6 +56,24 @@ Board::~Board()
 {
 
 }
+void Board::checkWin()
+{
+    for(int i = 1 ; i <=this->sizeX ;i++)
+        for(int j = 1 ; j <=this->sizeY ; j++)
+    {
+        if(grid[i][j] == 9) continue ;
+        if(onDisplay[i][j] == false) return ;
+    }
+    this->isWin = true ;
+}
+const bool& Board::getLose() const
+{
+    return this->isLose;
+}
+const bool& Board::getWin() const
+{
+    return this->isWin;
+}
 void Board::openNeighbour(int u,int v)
 {
 
@@ -85,6 +103,7 @@ void Board::openNeighbour(int u,int v)
 }
 void Board::update(Vector2f mousePosView)
 {
+    this->checkWin();
     this->mousePosView = mousePosView ;
     for (int i=1; i<=this->sizeX; i++)
         for (int j=1; j<=this->sizeY; j++)
@@ -93,9 +112,16 @@ void Board::update(Vector2f mousePosView)
             this->s.setPosition(i*w, j*w);
             if(this->s.getGlobalBounds().contains(mousePosView))
             {
-                if(Mouse::isButtonPressed(Mouse::Left))
+                int click = 0 ;
+                while(Mouse::isButtonPressed(Mouse::Left))
+                {
+                    click = 1 ;
+
+                }
+                if(click==1)
                 {
                     x = i, y = j ;
+                    if(onDisplay[x][y]) continue ;
                     if(grid[x][y] == 9)
                     {
                     sgrid[x][y] = 9 ;
@@ -103,12 +129,19 @@ void Board::update(Vector2f mousePosView)
                     }
                     this->openNeighbour( x,y) ;
                 }
-                if(Mouse::isButtonPressed(Mouse::Right))
+                while(Mouse::isButtonPressed(Mouse::Right))
+                {
+                    click = 2;
+
+                }
+                if(click==2)
                 {
                     x = i, y = j ;
+                    if(onDisplay[x][y]) continue ;
                     sgrid[i][j] = (sgrid[i][j]==11) ? 10 : 11 ;
                 }
-                break ;
+                if(click) break ;
+
 
             }
         }
@@ -120,7 +153,7 @@ void Board::render(RenderTarget* target )
     for (int i=1; i<=this->sizeX; i++)
         for (int j=1; j<=this->sizeY; j++)
         {
-            if(sgrid[x][y] == 9)
+            if(this->isLose || this->isWin)
                 sgrid[i][j] = grid[i][j];
             s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
             s.setPosition(i*w, j*w);
