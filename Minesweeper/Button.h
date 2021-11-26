@@ -28,6 +28,7 @@ public :
            string text ,Color idleColor,Color hoverColor , Color activeColor);
     ~Button() ;
     const bool isPressed() const ;
+    virtual void setOutline(Color color);
     void update(const Vector2f mousePos) ;
     void render(RenderTarget* target);
 };

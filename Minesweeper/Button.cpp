@@ -25,6 +25,10 @@ Button::~Button()
 {
 
 }
+void Button::setOutline(Color  color)
+{
+    this->shape.setOutlineColor(Color::Red);
+}
 void Button::update(const Vector2f mousePos)
 {
     //IDLE

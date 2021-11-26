@@ -478,10 +478,10 @@
 	<time.h>
 	<bits/stdc++.h>
 
-1637835930 source:d:\project-cs-master\minesweeper\button.cpp
+1637942817 source:d:\project-cs-master\minesweeper\button.cpp
 	"Button.h"
 
-1637835930 d:\project-cs-master\minesweeper\button.h
+1637942785 d:\project-cs-master\minesweeper\button.h
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<SFML/System.hpp>
@@ -587,8 +587,8 @@
 1637896123 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\selectionstate.cpp
 	"SelectionState.h"
 
-1637922720 source:d:\project-cs-master\minesweeper\leaderboardstate.cpp
-	"LeaderboardState.h"
+1637942986 source:d:\project-cs-master\minesweeper\leaderboardstate.cpp
+	"Leaderboardstate.h"
 
 1637932512 d:\project-cs-master\minesweeper\leaderboardstate.h
 	"State.h"
