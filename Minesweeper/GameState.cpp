@@ -36,7 +36,14 @@ GameState ::~GameState()
        delete it->second;
    }
 }
-
+const bool& GameState::getLose() const
+{
+    return this->board->isLose;
+}
+const bool& GameState::getWin() const
+{
+    return this->board->isWin;
+}
 void GameState::updateKeyBinds()
 {
     this->checkForQuit() ;
@@ -65,14 +72,22 @@ void GameState::updateButtons()
 
 void GameState::update()
 {
-    Time t = clock.getElapsedTime() ;
-    ssTime.str("");
-    ssTime <<"Time " <<int(t.asSeconds());
-    this->lblTime.setString(ssTime.str());
+    if(this->getLose())
+    {
+
+
+
+    }
     this->updateMousePositions() ;
     this->updateKeyBinds();
     this->updateButtons() ;
     this->board.update(this->mousePosView) ;
+    Time t = clock.getElapsedTime() ;
+    ssTime.str("");
+    ssTime <<"Time " <<int(t.asSeconds());
+    this->lblTime.setString(ssTime.str());
+
+
     system("cls") ;
     cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 

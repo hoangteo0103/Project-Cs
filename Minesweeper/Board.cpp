@@ -46,6 +46,8 @@ void Board::initSize(int width, int height, int numberOfBombs)
 }
 Board::Board()
 {
+    this->isLose = false;
+    this->isWin = false;
     this->t.loadFromFile("images/tiles.jpg");
     s.setTexture(t);
 }
@@ -110,6 +112,7 @@ void Board::update(Vector2f mousePosView)
 
             }
         }
+        if(this->sgrid[x][y] == 9) this->isLose = true ;
 }
 void Board::render(RenderTarget* target )
 {

@@ -17,6 +17,7 @@ protected:
     Vector2f mousePosView;
     int w = 32 ;
     int x, y ;
+    bool isLose , isWin;
     bool onDisplay[50][50] ;
     int sizeX , sizeY ;
     int numberOfBombs ;

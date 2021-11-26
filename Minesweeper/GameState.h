@@ -25,6 +25,8 @@ public:
     // Functions
     void updateKeyBinds();
     void updateButtons();
+    const bool& getLose() const ;
+    const bool& getWin() const ;
     void endState() ;
     void update() ;
     void render(RenderTarget* target = NULL) ;
