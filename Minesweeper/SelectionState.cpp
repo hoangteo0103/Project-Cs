@@ -66,13 +66,13 @@ void SelectionState::updateButtons()
 
     if(this->buttons["INTERMEDIATE_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states , 16 , 16 , 10)) ;
+       this->states->push(new GameState(this->app , this->states , 16 , 16 , 40)) ;
         this->quit = true ;
     }
 
     if(this->buttons["EXPERT_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states , 30 , 16 , 10)) ;
+       this->states->push(new GameState(this->app , this->states , 30 , 16 , 99)) ;
         this->quit = true ;
     }
 }

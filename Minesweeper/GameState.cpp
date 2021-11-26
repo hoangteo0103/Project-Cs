@@ -22,7 +22,7 @@ GameState::GameState(RenderWindow* app ,  stack<State*> *states , int sizeX , in
     this->ssTime<<"";
 
     this->board.initBoard() ;
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(600, 0 , 200 , 50 ,
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(1000, 0 , 200 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
 
