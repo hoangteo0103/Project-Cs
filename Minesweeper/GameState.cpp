@@ -10,12 +10,18 @@ void GameState::initFonts()
 GameState::GameState(RenderWindow* app ,  stack<State*> *states , int sizeX , int sizeY , int numberOfBombs)
     :State(app,states)
 {
+    this->initFonts() ;
     this->sizeX = sizeX ;
     this->sizeY = sizeY;
     this->numberOfBombs = numberOfBombs;
     this->board.initSize(this->sizeX , this->sizeY , this->numberOfBombs) ;
+    this->lblTime.setCharacterSize(30);
+    this->lblTime.setPosition({400, 0 }) ;
+    this->lblTime.setFillColor(Color::White);
+    this->lblTime.setFont(font);
+    this->ssTime<<"";
+
     this->board.initBoard() ;
-    this->initFonts() ;
     this->buttons["BACK_TO_MENU_STATE"] = new Button(600, 0 , 200 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
@@ -59,12 +65,16 @@ void GameState::updateButtons()
 
 void GameState::update()
 {
+    Time t = clock.getElapsedTime() ;
+    ssTime.str("");
+    ssTime <<"Time " <<int(t.asSeconds());
+    this->lblTime.setString(ssTime.str());
     this->updateMousePositions() ;
     this->updateKeyBinds();
     this->updateButtons() ;
     this->board.update(this->mousePosView) ;
-    //system("cls") ;
-    //cout << mousePosView.x <<' ' << mousePosView.y <<endl;
+    system("cls") ;
+    cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 
 }
 void GameState::renderButtons(RenderTarget* target )
@@ -80,6 +90,7 @@ void GameState::render(RenderTarget* target )
        target = this->app;
     this->board.render(target);
     this->renderButtons(target);
+    target->draw(this->lblTime);
 }
 
 

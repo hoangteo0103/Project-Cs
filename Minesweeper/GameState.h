@@ -8,6 +8,10 @@ class GameState :
 {
 private:
     Board board ;
+    Clock clock ;
+    Time t ;
+    Text lblTime ;
+    ostringstream ssTime ;
     map<string, Button* > buttons;
     Font font ;
     int sizeX , sizeY ;
