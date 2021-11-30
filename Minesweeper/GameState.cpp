@@ -6,6 +6,7 @@ void GameState::Reset()
     this->isUpdated = false ;
     this->clock.Reset() ;
     this->board.initBoard() ;
+    this->paused = false ;
 }
 
 
@@ -65,6 +66,7 @@ void GameState::updateKeyBinds()
 }
 void GameState::endState()
 {
+    this->quit = true ;
     cout <<"End MainMenu"<<endl;
 }
 void GameState::updatePaused()
@@ -95,17 +97,60 @@ void GameState::updateLeaderBoard()
 }
 void GameState::updateWinState()
 {
-    this->winState.updateMousePositions(mousePosView) ;
-    this->winState.update() ;
-    if(this->winState.getOk())
+    if(this->ok)
     {
-        this->ok = true ;
-        this->Reset() ;
+        this->againState.updateMousePositions(mousePosView);
+        this->againState.update() ;
+        if(this->againState.getYes())
+        {
+            this->Reset() ;
+        }
+        if(this->againState.getNo())
+            this->endState() ;
+
+    }
+    else
+    {
+        this->winState.updateMousePositions(mousePosView) ;
+        this->winState.update() ;
+        if(this->winState.getOk())
+        {
+            this->ok = true ;
+            this->againState.initState(*app) ;
+        }
     }
 }
-void GameState::updateLooseState()
+void GameState::updateLoseState()
 {
+    if(!this->isUpdated)
+    {
+        this->loseState.initState(*app) ;
+        this->isUpdated = true ;
+    }
+    if(this->ok)
+    {
+        this->againState.updateMousePositions(mousePosView);
+        this->againState.update() ;
+        if(this->againState.getYes())
+        {
+            this->Reset() ;
+        }
+        if(this->againState.getNo())
+            this->endState() ;
 
+    }
+    else
+    {
+
+        this->loseState.updateMousePositions(mousePosView) ;
+        this->loseState.update() ;
+
+        if(this->loseState.getOk())
+        {
+            this->ok = true ;
+            this->againState.initState(*app) ;
+        }
+    }
 }
 void GameState::updateButtons()
 {
@@ -136,13 +181,14 @@ void GameState::update()
     {
         if(this->getWin())
         {
-            if(!this->isUpdated) this->updateLeaderBoard();
+            if(!this->isUpdated)
+                this->updateLeaderBoard();
             this->updateWinState() ;
         }
         if(this->getLose())
         {
-            this->updateLooseState() ;
-            exit(0) ;
+            this->updateLoseState() ;
+
         }
 
         this->updateButtons() ;
@@ -174,17 +220,25 @@ void GameState::renderButtons(RenderTarget* target )
 }
 void GameState::render(RenderTarget* target )
 {
+    if(this->quit) return ;
     if (!target)
         target = this->app;
     this->board.render(target);
     this->renderButtons(target);
     target->draw(this->lblTime);
+    if(this->getLose())
+    {
+        if(!this->ok)
+            this->loseState.render(*target) ;
+        else
+            this->againState.render(*target) ;
+    }
     if(this->getWin())
     {
         if(!this->ok)
-        this->winState.render(*target) ;
-        //else
-        //this->
+            this->winState.render(*target) ;
+        else
+            this->againState.render(*target) ;
     }
     if(this->paused) // pausemenu render
     {

@@ -59,7 +59,7 @@ void SelectionState::updateButtons()
     }
     if(this->buttons["BEGINNER_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states , 10 , 10 , 10)) ;
+       this->states->push(new GameState(this->app , this->states , 10 , 10 , 1)) ;
       // this->states->push(new GameState(this->app , this->states , 9 , 9 ,8)) ;
         this->quit = true ;
     }

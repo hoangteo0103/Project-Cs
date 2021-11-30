@@ -4,6 +4,8 @@
 #include "Button.h"
 #include "PauseMenu.h"
 #include "WinState.h"
+#include "LoseState.h"
+#include "PlayAgainState.h"
 namespace st {
         struct Timer {
                 sf::Clock mC;
@@ -51,6 +53,8 @@ class GameState :
 private:
     PauseMenu pmenu;
     WinState winState ;
+    LoseState loseState ;
+    PlayAgainState againState ;
     Board board ;
     st::Timer clock  ;
     Time t ;
@@ -75,7 +79,7 @@ public:
     void updateLeaderBoard() ;
     void updateButtons();
     void updateWinState() ;
-    void updateLooseState() ;
+    void updateLoseState() ;
     const bool& getLose() const ;
     const bool& getWin() const ;
     void endState() ;

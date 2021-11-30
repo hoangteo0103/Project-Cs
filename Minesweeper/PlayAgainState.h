@@ -1,7 +1,7 @@
-#ifndef PAUSEMENU_H
-#define PAUSEMENU_H
+#ifndef PLAYAGAINSTATE_H
+#define PLAYAGAINSTATE_H
 #include "Button.h"
-class PauseMenu
+class PlayAgainState
 {
 private :
     RectangleShape background ;
@@ -10,17 +10,17 @@ private :
     Text menutext ;
     Vector2i mousePosWindow ;
     Vector2f mousePosView  ;
-
+    bool Yes, No ;
     map<string , Button* > buttons ;
-    bool resume ;
     void initFonts();
 public :
-    PauseMenu();
-    virtual ~PauseMenu() ;
+    PlayAgainState();
+    virtual ~PlayAgainState() ;
     //functions
     void initState(RenderWindow& app) ;
     void updateButtons() ;
-    const bool& getResume() const ;
+    const bool& getYes() const ;
+    const bool& getNo() const  ;
     void updateMousePositions(Vector2f mousePosView);
     void update() ;
     void render(RenderTarget& target) ;

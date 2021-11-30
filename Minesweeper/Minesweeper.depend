@@ -495,11 +495,13 @@
 1637835930 d:\project-cs-master\minesweeper\game.h
 	"GameState.h"
 
-1638268263 d:\project-cs-master\minesweeper\gamestate.h
+1638286072 d:\project-cs-master\minesweeper\gamestate.h
 	"State.h"
 	"Button.h"
 	"PauseMenu.h"
 	"WinState.h"
+	"LoseState.h"
+	"PlayAgainState.h"
 
 1638268499 d:\project-cs-master\minesweeper\state.h
 	"Board.h"
@@ -514,7 +516,7 @@
 	"Button.h"
 	"GameState.h"
 
-1638268499 source:d:\project-cs-master\minesweeper\gamestate.cpp
+1638286544 source:d:\project-cs-master\minesweeper\gamestate.cpp
 	"GameState.h"
 
 1637835930 source:d:\project-cs-master\minesweeper\main.cpp
@@ -523,7 +525,7 @@
 1637932350 source:d:\project-cs-master\minesweeper\mainmenustate.cpp
 	"MainMenuState.h"
 
-1637931177 source:d:\project-cs-master\minesweeper\selectionstate.cpp
+1638285541 source:d:\project-cs-master\minesweeper\selectionstate.cpp
 	"SelectionState.h"
 
 1638191772 source:d:\project-cs-master\minesweeper\state.cpp
@@ -603,11 +605,21 @@
 1638258866 source:d:\project-cs-master\minesweeper\pausemenu.cpp
 	"PauseMenu.h"
 
-1638260500 source:d:\project-cs-master\minesweeper\playagainstate.cpp
+1638285773 source:d:\project-cs-master\minesweeper\playagainstate.cpp
+	"PlayAgainState.h"
 
 1638268095 source:d:\project-cs-master\minesweeper\winstate.cpp
 	"WinState.h"
 
 1638266971 d:\project-cs-master\minesweeper\winstate.h
 	"Button.h"
+
+1638284863 d:\project-cs-master\minesweeper\playagainstate.h
+	"Button.h"
+
+1638286430 d:\project-cs-master\minesweeper\losestate.h
+	"Button.h"
+
+1638286440 source:d:\project-cs-master\minesweeper\losestate.cpp
+	"LoseState.h"
 
