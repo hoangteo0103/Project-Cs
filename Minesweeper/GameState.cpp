@@ -95,10 +95,13 @@ void GameState::updateLeaderBoard()
     }
     this->winState.initState(*app) ;
 }
+<<<<<<< HEAD
 void GameState::saveBoard()
 {
     this->board.save() ;
 }
+=======
+>>>>>>> 438868f17b30c84ee8f10811305f447eb85a5ee1
 void GameState::updateWinState()
 {
     if(this->ok)
@@ -164,8 +167,13 @@ void GameState::updateButtons()
     }
     if(this->buttons["BACK_TO_MENU_STATE"]->isPressed())
     {
+<<<<<<< HEAD
         this->saveBoard();
         this->quit = true ;
+=======
+        this->quit = true ;
+
+>>>>>>> 438868f17b30c84ee8f10811305f447eb85a5ee1
     }
     if(this->buttons["PAUSE_MENU_STATE"]->isPressed())
     {

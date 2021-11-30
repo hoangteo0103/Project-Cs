@@ -28,10 +28,6 @@ public :
     Board();
     virtual ~Board() ;
     virtual void checkWin();
-<<<<<<< HEAD
-    virtual void save() ;
-=======
->>>>>>> 438868f17b30c84ee8f10811305f447eb85a5ee1
     const bool& getLose() const ;
     const bool& getWin() const ;
     virtual void openNeighbour(int u ,int v);

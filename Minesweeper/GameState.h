@@ -74,7 +74,10 @@ public:
     virtual ~GameState();
     // Functions
     void Reset() ;
+<<<<<<< HEAD
     void saveBoard() ;
+=======
+>>>>>>> 438868f17b30c84ee8f10811305f447eb85a5ee1
     void updatePaused();
     void updateKeyBinds();
     void updateLeaderBoard() ;
