@@ -468,7 +468,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1637922173 source:d:\project-cs-master\minesweeper\board.cpp
+1638268784 source:d:\project-cs-master\minesweeper\board.cpp
 	"Board.h"
 
 1637920057 d:\project-cs-master\minesweeper\board.h
@@ -478,7 +478,7 @@
 	<time.h>
 	<bits/stdc++.h>
 
-1637942817 source:d:\project-cs-master\minesweeper\button.cpp
+1637943496 source:d:\project-cs-master\minesweeper\button.cpp
 	"Button.h"
 
 1637942785 d:\project-cs-master\minesweeper\button.h
@@ -495,11 +495,13 @@
 1637835930 d:\project-cs-master\minesweeper\game.h
 	"GameState.h"
 
-1637922419 d:\project-cs-master\minesweeper\gamestate.h
+1638268263 d:\project-cs-master\minesweeper\gamestate.h
 	"State.h"
 	"Button.h"
+	"PauseMenu.h"
+	"WinState.h"
 
-1637835930 d:\project-cs-master\minesweeper\state.h
+1638268499 d:\project-cs-master\minesweeper\state.h
 	"Board.h"
 
 1637932339 d:\project-cs-master\minesweeper\mainmenustate.h
@@ -512,7 +514,7 @@
 	"Button.h"
 	"GameState.h"
 
-1637921789 source:d:\project-cs-master\minesweeper\gamestate.cpp
+1638268499 source:d:\project-cs-master\minesweeper\gamestate.cpp
 	"GameState.h"
 
 1637835930 source:d:\project-cs-master\minesweeper\main.cpp
@@ -524,7 +526,7 @@
 1637931177 source:d:\project-cs-master\minesweeper\selectionstate.cpp
 	"SelectionState.h"
 
-1637835930 source:d:\project-cs-master\minesweeper\state.cpp
+1638191772 source:d:\project-cs-master\minesweeper\state.cpp
 	"State.h"
 
 1637892974 source:c:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\board.cpp
@@ -594,4 +596,18 @@
 	"State.h"
 	"Button.h"
 	"GameState.h"
+
+1638258920 d:\project-cs-master\minesweeper\pausemenu.h
+	"Button.h"
+
+1638258866 source:d:\project-cs-master\minesweeper\pausemenu.cpp
+	"PauseMenu.h"
+
+1638260500 source:d:\project-cs-master\minesweeper\playagainstate.cpp
+
+1638268095 source:d:\project-cs-master\minesweeper\winstate.cpp
+	"WinState.h"
+
+1638266971 d:\project-cs-master\minesweeper\winstate.h
+	"Button.h"
 

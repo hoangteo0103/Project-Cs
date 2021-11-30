@@ -60,10 +60,16 @@
 		<Unit filename="LeaderboardState.h" />
 		<Unit filename="MainMenuState.cpp" />
 		<Unit filename="MainMenuState.h" />
+		<Unit filename="PauseMenu.cpp" />
+		<Unit filename="PauseMenu.h" />
+		<Unit filename="PlayAgainState.cpp" />
+		<Unit filename="PlayAgainState.h" />
 		<Unit filename="SelectionState.cpp" />
 		<Unit filename="SelectionState.h" />
 		<Unit filename="State.cpp" />
 		<Unit filename="State.h" />
+		<Unit filename="WinState.cpp" />
+		<Unit filename="WinState.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

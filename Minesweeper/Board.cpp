@@ -1,6 +1,9 @@
 #include "Board.h"
 void Board::initBoard()
 {
+    this->isLose = false;
+    this->isWin = false ;
+    memset(onDisplay , false , sizeof(onDisplay)) ;
     x = 0, y = 0 ;
     int numNow = 0 ;
     for (int i=1; i<=this->sizeX; i++)
@@ -65,6 +68,7 @@ void Board::checkWin()
         if(onDisplay[i][j] == false) return ;
     }
     this->isWin = true ;
+
 }
 const bool& Board::getLose() const
 {

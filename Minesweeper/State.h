@@ -7,6 +7,7 @@ class State
 protected:
     stack<State*> *states;
     RenderWindow* app;
+    bool paused  ;
     bool quit ;
     Vector2i mousePosWindow ;
     Vector2f mousePosView  ;
@@ -15,6 +16,8 @@ public:
     State(RenderWindow* app, stack<State*> *states);
     virtual ~State();
     // Functions
+    void pauseState();
+    void unpauseState() ;
     const bool& getQuit() const ;
     virtual void checkForQuit() ;
     virtual void updateKeyBinds() = 0 ;
