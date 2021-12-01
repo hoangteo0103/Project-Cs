@@ -74,6 +74,11 @@ void GameState::updatePaused()
 {
     this->pmenu.updateMousePositions(mousePosView) ;
 }
+bool cmp(pair<int ,int > a, pair<int ,int > b )
+{
+    if(a.first!=b.first) return a.first > b.first;
+    return a.second < b.second ;
+}
 void GameState::updateLeaderBoard()
 {
     this->isUpdated = true ;
@@ -88,7 +93,7 @@ void GameState::updateLeaderBoard()
     {
         tmp.push_back({bomb, time});
     }
-    sort(tmp.rbegin(), tmp.rend());
+    sort(tmp.begin(), tmp.end() , cmp );
     ofstream ofs("Leaderboard/leaderboard.ini") ;
     for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
     {
