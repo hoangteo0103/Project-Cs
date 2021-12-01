@@ -29,7 +29,7 @@ void PlayAgainState::initState(RenderWindow& app)
     this->buttons["YES"] = new Button(200, 200, 200, 50,
             &this->font, "YES", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["NO"] = new Button(300, 300, 200, 50,
+    this->buttons["NO"] = new Button(200, 260, 200, 50,
             &this->font, "NO", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 

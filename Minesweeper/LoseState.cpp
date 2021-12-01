@@ -20,7 +20,7 @@ void LoseState::initState(RenderWindow& app)
     // Init container
     this->container.setSize(
         Vector2f(
-            static_cast<float> (app.getSize().x) /4.f,
+            static_cast<float> (app.getSize().x) /3.f,
             static_cast<float> (app.getSize().y)- 50.f) );
     this->container.setFillColor(Color::Blue);
     this->container.setPosition(

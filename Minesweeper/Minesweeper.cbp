@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="E:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-network-d" />
@@ -20,6 +21,7 @@
 					<Add library="sfml-graphics-d" />
 					<Add library="sfml-window-d" />
 					<Add library="sfml-system-d" />
+					<Add directory="E:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -29,6 +31,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="E:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -38,6 +41,7 @@
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
 					<Add library="opengl32" />
+					<Add directory="E:/HCMUS/Materials/First Year/First Semester/Computer Science I/Final Project (Minesweeper)/SFML-2.5.1/lib" />
 				</Linker>
 			</Target>
 		</Build>
@@ -73,10 +77,6 @@
 		<Unit filename="WinState.cpp" />
 		<Unit filename="WinState.h" />
 		<Unit filename="main.cpp" />
-		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
