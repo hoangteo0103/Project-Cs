@@ -17,29 +17,35 @@ void GameState::initFonts()
 
     }
 }
-GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int sizeY, int numberOfBombs , bool saved )
+GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int sizeY, int numberOfBombs, bool saved )
     :State(app,states)
 {
+    // Init
     this->ok = false ;
     this->isUpdated = false ;
     this->clock.Start() ;
     this->initFonts() ;
+
+
+    // Init board
     this->sizeX = sizeX ;
     this->sizeY = sizeY;
     this->numberOfBombs = numberOfBombs;
     if(!saved)
-    this->board.initSize(this->sizeX, this->sizeY, this->numberOfBombs) ;
+        this->board.initSize(this->sizeX, this->sizeY, this->numberOfBombs) ;
+    // Init time
+
     this->lblTime.setCharacterSize(30);
     this->lblTime.setPosition({400, 0 }) ;
     this->lblTime.setFillColor(Color::White);
     this->lblTime.setFont(font);
     this->ssTime<<"";
-
     this->board.initBoard(saved) ;
+    // Init Buttons
     this->buttons["BACK_TO_MENU_STATE"] = new Button(1000, 0, 200, 50,
             &this->font, "Back to Menu", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["PAUSE_MENU_STATE"] = new Button(500, 500, 200, 50,
+    this->buttons["PAUSE_MENU_STATE"] = new Button(1000, 50, 200, 50,
             &this->font, "PAUSE", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 }
@@ -53,32 +59,40 @@ GameState ::~GameState()
         delete it->second;
     }
 }
+
 const bool& GameState::getLose() const
 {
     return this->board.getLose();
 }
+
 const bool& GameState::getWin() const
 {
     return this->board.getWin();
 }
+
 void GameState::updateKeyBinds()
 {
     this->checkForQuit() ;
 }
+
 void GameState::endState()
 {
     this->quit = true ;
     cout <<"End MainMenu"<<endl;
 }
+
 void GameState::updatePaused()
 {
     this->pmenu.updateMousePositions(mousePosView) ;
 }
-bool cmp(pair<int ,int > a, pair<int ,int > b )
+
+bool cmp(pair<int,int > a, pair<int,int > b )
 {
-    if(a.first!=b.first) return a.first > b.first;
+    if(a.first!=b.first)
+        return a.first > b.first;
     return a.second < b.second ;
 }
+
 void GameState::updateLeaderBoard()
 {
     this->isUpdated = true ;
@@ -93,7 +107,7 @@ void GameState::updateLeaderBoard()
     {
         tmp.push_back({bomb, time});
     }
-    sort(tmp.begin(), tmp.end() , cmp );
+    sort(tmp.begin(), tmp.end(), cmp );
     ofstream ofs("Leaderboard/leaderboard.ini") ;
     for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
     {
@@ -102,10 +116,12 @@ void GameState::updateLeaderBoard()
     ofstream del("Save/PreviousBoard.ini") ;
     this->winState.initState(*app) ;
 }
+
 void GameState::saveBoard()
 {
     this->board.save() ;
 }
+
 void GameState::updateWinState()
 {
     if(this->ok)
@@ -131,6 +147,7 @@ void GameState::updateWinState()
         }
     }
 }
+
 void GameState::updateLoseState()
 {
     ofstream del("Save/PreviousBoard.ini") ;
@@ -164,6 +181,7 @@ void GameState::updateLoseState()
         }
     }
 }
+
 void GameState::updateButtons()
 {
     for(auto &it : this->buttons)
@@ -194,14 +212,15 @@ void GameState::update()
     {
         if(this->getWin())
         {
+            this->clock.Pause() ;
             if(!this->isUpdated)
                 this->updateLeaderBoard();
             this->updateWinState() ;
         }
         if(this->getLose())
         {
+            this->clock.Pause() ;
             this->updateLoseState() ;
-
         }
 
         this->updateButtons() ;
@@ -224,6 +243,7 @@ void GameState::update()
         }
     }
 }
+
 void GameState::renderButtons(RenderTarget* target )
 {
     for(auto &it : this->buttons)
@@ -231,9 +251,11 @@ void GameState::renderButtons(RenderTarget* target )
         it.second->render(target);
     }
 }
+
 void GameState::render(RenderTarget* target )
 {
-    if(this->quit) return ;
+    if(this->quit)
+        return ;
     if (!target)
         target = this->app;
     this->board.render(target);
