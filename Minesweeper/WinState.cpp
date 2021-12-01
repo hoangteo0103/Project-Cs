@@ -19,13 +19,13 @@ void WinState::initState(RenderWindow& app)
     // Init container
     this->container.setSize(
         Vector2f(
-            static_cast<float> (app.getSize().x) /3.f,
-            static_cast<float> (app.getSize().y)- 50.f) );
+            static_cast<float> (app.getSize().x)  - 50.f,
+            static_cast<float> (app.getSize().y)/4.f));
     this->container.setFillColor(Color::Blue);
     this->container.setPosition(
-        Vector2f(static_cast<float>(app.getSize().x) / 2.f - this->container.getSize().x/2.f, 15.f));
+        Vector2f(15.f , static_cast<float>(app.getSize().y) / 2.f - this->container.getSize().y/2.f));
     // Init buttons
-    this->buttons["OK"] = new Button(200, 200, 200, 50,
+    this->buttons["OK"] = new Button(500, 400, 200, 50,
             &this->font, "OK", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
     // Init Text
