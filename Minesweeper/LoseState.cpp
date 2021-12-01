@@ -80,9 +80,11 @@ void LoseState::render(RenderTarget& target)
 {
     target.draw(background);
     target.draw(container);
+
     target.draw(menutext);
     for(auto &i : this->buttons)
     {
         i.second->render(&target);
     }
 }
+

@@ -5,7 +5,7 @@ void GameState::Reset()
     this->ok = false ;
     this->isUpdated = false ;
     this->clock.Reset() ;
-    this->board.initBoard() ;
+    this->board.initBoard(0) ;
     this->paused = false ;
 }
 
@@ -17,7 +17,7 @@ void GameState::initFonts()
 
     }
 }
-GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int sizeY, int numberOfBombs)
+GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int sizeY, int numberOfBombs , bool saved )
     :State(app,states)
 {
     this->ok = false ;
@@ -27,6 +27,7 @@ GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int s
     this->sizeX = sizeX ;
     this->sizeY = sizeY;
     this->numberOfBombs = numberOfBombs;
+    if(!saved)
     this->board.initSize(this->sizeX, this->sizeY, this->numberOfBombs) ;
     this->lblTime.setCharacterSize(30);
     this->lblTime.setPosition({400, 0 }) ;
@@ -34,7 +35,7 @@ GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int s
     this->lblTime.setFont(font);
     this->ssTime<<"";
 
-    this->board.initBoard() ;
+    this->board.initBoard(saved) ;
     this->buttons["BACK_TO_MENU_STATE"] = new Button(1000, 0, 200, 50,
             &this->font, "Back to Menu", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
@@ -93,15 +94,13 @@ void GameState::updateLeaderBoard()
     {
         ofs << tmp[i].first << ' ' << tmp[i].second << endl;
     }
+    ofstream del("Save/PreviousBoard.ini") ;
     this->winState.initState(*app) ;
 }
-<<<<<<< HEAD
 void GameState::saveBoard()
 {
     this->board.save() ;
 }
-=======
->>>>>>> 438868f17b30c84ee8f10811305f447eb85a5ee1
 void GameState::updateWinState()
 {
     if(this->ok)
@@ -129,6 +128,7 @@ void GameState::updateWinState()
 }
 void GameState::updateLoseState()
 {
+    ofstream del("Save/PreviousBoard.ini") ;
     if(!this->isUpdated)
     {
         this->loseState.initState(*app) ;
@@ -167,13 +167,9 @@ void GameState::updateButtons()
     }
     if(this->buttons["BACK_TO_MENU_STATE"]->isPressed())
     {
-<<<<<<< HEAD
+
         this->saveBoard();
         this->quit = true ;
-=======
-        this->quit = true ;
-
->>>>>>> 438868f17b30c84ee8f10811305f447eb85a5ee1
     }
     if(this->buttons["PAUSE_MENU_STATE"]->isPressed())
     {

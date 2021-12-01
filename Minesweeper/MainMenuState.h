@@ -19,6 +19,7 @@ public:
     MainMenuState(RenderWindow* app, stack<State*> *states);
     virtual ~MainMenuState();
     // Functions
+    bool checkSaved() ;
     void updateKeyBinds();
     void updateButtons();
     void endState() ;

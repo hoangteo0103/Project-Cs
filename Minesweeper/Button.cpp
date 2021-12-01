@@ -37,11 +37,12 @@ void Button::update(const Vector2f mousePos)
     {
         //HOVER
         this->buttonState = BTN_HOVER;
-        if(Mouse::isButtonPressed(Mouse::Left))
+        bool leftPress = false ;
+        while(Mouse::isButtonPressed(Mouse::Left))
         {
-            //PRESSED
-            this->buttonState = BTN_ACTIVE ;
+            leftPress = true ;
         }
+        if(leftPress)  this->buttonState = BTN_ACTIVE ;
     }
     switch(this->buttonState)
     {
