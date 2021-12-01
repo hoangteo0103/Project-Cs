@@ -54,8 +54,17 @@ void MainMenuState::endState()
 {
     cout <<"End MainMenu"<<endl;
 }
+bool MainMenuState::checkSaved()
+{
+    ifstream ifs("Save/PreviousBoard.ini") ;
+    int a ;
+    ifs >> a ;
+    if( a <= 0 ) return false;
+    return true ;
+}
 void MainMenuState::updateButtons()
 {
+    cout << checkSaved() << endl;
     for(auto &it : this->buttons)
     {
         it.second->update(this->mousePosView);
@@ -71,6 +80,11 @@ void MainMenuState::updateButtons()
     if(this->buttons["GAME_QUIT_BTN"]->isPressed())
     {
         this->quit = true ;
+    }
+    if(this->buttons["CONTINUE_STATE_BTN"]->isPressed())
+    {
+        if(this->checkSaved())
+        this->states->push(new GameState(this->app , this->states , 0 , 0 , 0 ,  1)) ;
     }
 }
 

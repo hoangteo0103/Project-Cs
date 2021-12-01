@@ -1,9 +1,36 @@
 #include "Board.h"
-void Board::initBoard()
+void Board::loadFromFile()
 {
     this->isLose = false;
     this->isWin = false ;
-    memset(onDisplay , false , sizeof(onDisplay)) ;
+    ifstream ifs("Save/PreviousBoard.ini") ;
+    ifs >> this->sizeX  >> this->sizeY >> this->numberOfBombs ;
+    for(int i = 1 ; i <= this->sizeX ; i++ )
+    {
+        for(int j = 1  ; j <= this->sizeY ; j++)
+            ifs >> grid[i][j]  ;
+    }
+    for(int i = 1 ; i <= this->sizeX ; i++ )
+    {
+        for(int j = 1  ; j <= this->sizeY ; j++)
+            ifs >> sgrid[i][j] ;
+    }
+    for(int i = 1 ; i <= this->sizeX ; i++ )
+    {
+        for(int j = 1  ; j <= this->sizeY ; j++)
+            ifs >> onDisplay[i][j] ;
+    }
+}
+void Board::initBoard(bool saved )
+{
+    if(saved)
+    {
+        this->loadFromFile() ;
+        return ;
+    }
+    this->isLose = false;
+    this->isWin = false ;
+    memset(onDisplay, false, sizeof(onDisplay)) ;
     x = 0, y = 0 ;
     int numNow = 0 ;
     for (int i=1; i<=this->sizeX; i++)
@@ -41,6 +68,29 @@ void Board::initBoard()
             grid[i][j]=n;
         }
 }
+void Board::save()
+{
+    ofstream ofs("Save/PreviousBoard.ini") ;
+    ofs << this->sizeX << ' ' << this->sizeY << ' ' << this->numberOfBombs << endl ;
+    for(int i = 1 ; i <= this->sizeX ; i++ )
+    {
+        for(int j = 1  ; j <= this->sizeY ; j++)
+            ofs << grid[i][j] << ' '  ;
+        ofs << endl ;
+    }
+    for(int i = 1 ; i <= this->sizeX ; i++ )
+    {
+        for(int j = 1  ; j <= this->sizeY ; j++)
+            ofs << sgrid[i][j] << ' '  ;
+        ofs << endl ;
+    }
+    for(int i = 1 ; i <= this->sizeX ; i++ )
+    {
+        for(int j = 1  ; j <= this->sizeY ; j++)
+            ofs << onDisplay[i][j] << ' '  ;
+        ofs << endl ;
+    }
+}
 void Board::initSize(int width, int height, int numberOfBombs)
 {
     this->sizeX = width ;
@@ -61,12 +111,14 @@ Board::~Board()
 }
 void Board::checkWin()
 {
-    for(int i = 1 ; i <=this->sizeX ;i++)
+    for(int i = 1 ; i <=this->sizeX ; i++)
         for(int j = 1 ; j <=this->sizeY ; j++)
-    {
-        if(grid[i][j] == 9) continue ;
-        if(onDisplay[i][j] == false) return ;
-    }
+        {
+            if(grid[i][j] == 9)
+                continue ;
+            if(onDisplay[i][j] == false)
+                return ;
+        }
     this->isWin = true ;
 
 }
@@ -82,15 +134,18 @@ void Board::openNeighbour(int u,int v)
 {
 
     if( u < 1 || v < 1 || u > this->sizeX || v > this->sizeY) ;
-    if(onDisplay[u][v]) return ;
-    if(grid[u][v] == 10 || sgrid[u][v] == 11 ) return ;
+    if(onDisplay[u][v])
+        return ;
+    if(grid[u][v] == 10 || sgrid[u][v] == 11 )
+        return ;
     if(grid[u][v]<=8)
     {
         if(sgrid[u][v]==10)
         {
             sgrid[u][v] = grid[u][v] ;
         }
-        else return ;
+        else
+            return ;
     }
     onDisplay[u][v] = true ;
     if(grid[u][v] == 0 && sgrid[u][v] == 0 )
@@ -101,8 +156,8 @@ void Board::openNeighbour(int u,int v)
         this->openNeighbour(u + 1, v - 1);
         this->openNeighbour(u - 1, v + 1 );
         this->openNeighbour(u - 1, v - 1);
-        this->openNeighbour(u , v - 1);
-        this->openNeighbour(u , v + 1);
+        this->openNeighbour(u, v - 1);
+        this->openNeighbour(u, v + 1);
     }
 }
 void Board::update(Vector2f mousePosView)
@@ -125,11 +180,12 @@ void Board::update(Vector2f mousePosView)
                 if(click==1)
                 {
                     x = i, y = j ;
-                    if(onDisplay[x][y]) continue ;
+                    if(onDisplay[x][y])
+                        continue ;
                     if(grid[x][y] == 9)
                     {
-                    sgrid[x][y] = 9 ;
-                    continue ;
+                        sgrid[x][y] = 9 ;
+                        continue ;
                     }
                     this->openNeighbour( x,y) ;
                 }
@@ -141,15 +197,18 @@ void Board::update(Vector2f mousePosView)
                 if(click==2)
                 {
                     x = i, y = j ;
-                    if(onDisplay[x][y]) continue ;
+                    if(onDisplay[x][y])
+                        continue ;
                     sgrid[i][j] = (sgrid[i][j]==11) ? 10 : 11 ;
                 }
-                if(click) break ;
+                if(click)
+                    break ;
 
 
             }
         }
-        if(this->sgrid[x][y] == 9) this->isLose = true ;
+    if(this->sgrid[x][y] == 9)
+        this->isLose = true ;
 }
 void Board::render(RenderTarget* target )
 {

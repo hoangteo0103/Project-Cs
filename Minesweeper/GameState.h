@@ -70,10 +70,11 @@ private:
     void initButtons();
 
 public:
-    GameState(RenderWindow* app, stack<State*> *states ,int sizeX , int sizeY , int numberOfBombs);
+    GameState(RenderWindow* app, stack<State*> *states ,int sizeX , int sizeY , int numberOfBombs, bool saved);
     virtual ~GameState();
     // Functions
     void Reset() ;
+   void saveBoard() ;
     void updatePaused();
     void updateKeyBinds();
     void updateLeaderBoard() ;

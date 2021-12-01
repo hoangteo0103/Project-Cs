@@ -28,11 +28,13 @@ public :
     Board();
     virtual ~Board() ;
     virtual void checkWin();
+    virtual void loadFromFile() ;
+    virtual void save() ;
     const bool& getLose() const ;
     const bool& getWin() const ;
     virtual void openNeighbour(int u ,int v);
     virtual void initSize(int width , int height , int numberOfBombs) ;
-    virtual void initBoard() ;
+    virtual void initBoard(bool saved ) ;
     virtual void update(Vector2f mousPosView) ;
     virtual void render(RenderTarget* target ) ;
 };

@@ -59,20 +59,20 @@ void SelectionState::updateButtons()
     }
     if(this->buttons["BEGINNER_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states , 10 , 10 , 1)) ;
+       this->states->push(new GameState(this->app , this->states , 10 , 10 , 1 , 0 )) ;
       // this->states->push(new GameState(this->app , this->states , 9 , 9 ,8)) ;
         this->quit = true ;
     }
 
     if(this->buttons["INTERMEDIATE_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states , 16 , 16 , 40)) ;
+       this->states->push(new GameState(this->app , this->states , 16 , 16 , 40 , 0 )) ;
         this->quit = true ;
     }
 
     if(this->buttons["EXPERT_STATE"]->isPressed())
     {
-       this->states->push(new GameState(this->app , this->states , 30 , 16 , 99)) ;
+       this->states->push(new GameState(this->app , this->states , 30 , 16 , 99 ,  0 )) ;
         this->quit = true ;
     }
 }
