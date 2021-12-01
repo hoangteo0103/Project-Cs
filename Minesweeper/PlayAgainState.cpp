@@ -26,10 +26,10 @@ void PlayAgainState::initState(RenderWindow& app)
     this->container.setPosition(
         Vector2f(15.f , static_cast<float>(app.getSize().y) / 2.f - this->container.getSize().y/2.f));
     // Init buttons
-    this->buttons["YES"] = new Button(450, 400, 200, 50,
+    this->buttons["YES"] = new Button(410, 360, 200, 50,
             &this->font, "YES", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["NO"] = new Button(660, 400, 200, 50,
+    this->buttons["NO"] = new Button(620, 360, 200, 50,
             &this->font, "NO", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
