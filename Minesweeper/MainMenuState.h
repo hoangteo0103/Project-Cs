@@ -8,8 +8,8 @@ class MainMenuState :
     public State
 {
 private:
-
-    RectangleShape background ;
+    Texture t ;
+    Sprite background;
     Font font ;
     map<string, Button* > buttons;
     void initFonts();

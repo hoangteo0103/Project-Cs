@@ -6,6 +6,9 @@ void MainMenuState::initFonts()
     {
 
     }
+
+    t.loadFromFile("images/background.jpg") ;
+    this->background.setTexture(t) ;
 }
 void MainMenuState::initButtons()
 {
@@ -35,8 +38,6 @@ MainMenuState::MainMenuState(RenderWindow* app,stack<State*> *states )
             &this->font, "Exit", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
-    this->background.setSize(Vector2f(app->getSize().x, app->getSize().y));
-    this->background.setFillColor(Color::Blue);
 }
 MainMenuState ::~MainMenuState()
 {
