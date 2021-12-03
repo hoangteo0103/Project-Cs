@@ -20,6 +20,7 @@ protected:
     bool isLose , isWin;
     bool onDisplay[50][50] ;
     int sizeX , sizeY ;
+    int startPos_x , startPos_y ;
     int numberOfBombs ;
     int grid[50][50];
     int sgrid[50][50];

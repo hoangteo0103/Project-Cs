@@ -1,6 +1,7 @@
 #include "Board.h"
 void Board::loadFromFile()
 {
+
     this->isLose = false;
     this->isWin = false ;
     ifstream ifs("Save/PreviousBoard.ini") ;
@@ -20,6 +21,8 @@ void Board::loadFromFile()
         for(int j = 1  ; j <= this->sizeY ; j++)
             ifs >> onDisplay[i][j] ;
     }
+    this->startPos_x = 600 - (this->sizeX * 32) / 2;
+    this->startPos_y = 360 - (this->sizeY * 32) / 2;
 }
 void Board::initBoard(bool saved )
 {
@@ -67,6 +70,8 @@ void Board::initBoard(bool saved )
                 n++;
             grid[i][j]=n;
         }
+    this->startPos_x = 600 - (this->sizeX * 32) / 2;
+    this->startPos_y = 360 - (this->sizeY * 32) / 2;
 }
 void Board::save()
 {
@@ -93,8 +98,11 @@ void Board::save()
 }
 void Board::initSize(int width, int height, int numberOfBombs)
 {
+
     this->sizeX = width ;
     this->sizeY = height ;
+    this->startPos_x = 600 - (this->sizeX * 32) / 2;
+    this->startPos_y = 360 - (this->sizeY * 32) / 2;
     this->numberOfBombs = numberOfBombs ;
 }
 Board::Board()
@@ -167,8 +175,10 @@ void Board::update(Vector2f mousePosView)
     for (int i=1; i<=this->sizeX; i++)
         for (int j=1; j<=this->sizeY; j++)
         {
+            int new_x = this->startPos_x + i * w ;
+            int new_y = this->startPos_y + j * w ;
             this->s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
-            this->s.setPosition(i*w, j*w);
+            this->s.setPosition(new_x , new_y);
             if(this->s.getGlobalBounds().contains(mousePosView))
             {
                 int click = 0 ;
@@ -212,14 +222,15 @@ void Board::update(Vector2f mousePosView)
 }
 void Board::render(RenderTarget* target )
 {
-
     for (int i=1; i<=this->sizeX; i++)
         for (int j=1; j<=this->sizeY; j++)
         {
+            int new_x = this->startPos_x + i * w ;
+            int new_y = this->startPos_y + j * w ;
             if(this->isLose || this->isWin)
                 sgrid[i][j] = grid[i][j];
             s.setTextureRect(IntRect(sgrid[i][j]*w,0,w,w));
-            s.setPosition(i*w, j*w);
+            s.setPosition(new_x, new_y);
             target->draw(s);
         }
     x = 0, y = 0 ;
