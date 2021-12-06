@@ -33,6 +33,7 @@ public :
     virtual void save() ;
     const bool& getLose() const ;
     const bool& getWin() const ;
+    virtual void openBomb(int u , int v) ;
     virtual void openNeighbour(int u ,int v);
     virtual void initSize(int width , int height , int numberOfBombs) ;
     virtual void initBoard(bool saved ) ;
