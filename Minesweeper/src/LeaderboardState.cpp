@@ -1,4 +1,3 @@
-
 #include "Leaderboardstate.h"
 
 
@@ -8,13 +7,15 @@ void LeaderboardState::initFonts()
     {
 
     }
+    texture.loadFromFile("images/leader_back.png") ;
+    this->background.setTexture(texture) ;
 }
 LeaderboardState::LeaderboardState(RenderWindow* app ,  stack<State*> *states)
     :State(app,states)
 {
 
     this->initFonts() ;
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(0,0, 150 , 50 ,
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(83, 83, 150 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
     ifstream ifs("Leaderboard/leaderboard.ini") ;
@@ -93,6 +94,8 @@ void LeaderboardState::render(RenderTarget* target )
 {
     if (!target)
        target = this->app;
+
+    target->draw(this->background);
     this->renderButtons(target);
 }
 

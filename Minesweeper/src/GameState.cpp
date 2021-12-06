@@ -16,6 +16,8 @@ void GameState::initFonts()
     {
 
     }
+    texture.loadFromFile("images/gamestate_back.png") ;
+    this->background.setTexture(texture) ;
 }
 GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int sizeY, int numberOfBombs, bool saved )
     :State(app,states)

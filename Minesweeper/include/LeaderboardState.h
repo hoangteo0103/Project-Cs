@@ -11,6 +11,8 @@ private:
 
     map<string, Button* > buttons;
     Font font ;
+    Texture texture ;
+    Sprite background;
     void initFonts();
     void initButtons();
 

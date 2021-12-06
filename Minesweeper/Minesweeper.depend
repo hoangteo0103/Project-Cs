@@ -1144,10 +1144,10 @@
 1638328459 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\selectionstate.cpp
 	"SelectionState.h"
 
-1638795626 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\authorstate.cpp
+1638798554 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\authorstate.cpp
 	"AuthorState.h"
 
-1638795224 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\authorstate.h
+1638798376 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\authorstate.h
 	"State.h"
 	"Button.h"
 	"GameState.h"
@@ -1169,7 +1169,7 @@
 	<time.h>
 	<bits/stdc++.h>
 
-1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\gamestate.h
+1638797502 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\gamestate.h
 	"State.h"
 	"Button.h"
 	"PauseMenu.h"
@@ -1208,7 +1208,7 @@
 	"AuthorState.h"
 	"GameState.h"
 
-1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\leaderboardstate.h
+1638799721 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\leaderboardstate.h
 	"State.h"
 	"Button.h"
 	"GameState.h"
@@ -1218,10 +1218,10 @@
 	"Button.h"
 	"GameState.h"
 
-1638328459 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\gamestate.cpp
+1638797523 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\gamestate.cpp
 	"GameState.h"
 
-1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\leaderboardstate.cpp
+1638798151 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\leaderboardstate.cpp
 	"Leaderboardstate.h"
 
 1638628102 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\losestate.cpp
@@ -1244,4 +1244,7 @@
 
 1638628103 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\winstate.cpp
 	"WinState.h"
+
+1638799588 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\mainmenustate.cpp
+	"MainMenuState.h"
 

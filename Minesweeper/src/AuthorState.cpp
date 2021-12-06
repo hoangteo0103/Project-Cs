@@ -1,5 +1,6 @@
 #include "AuthorState.h"
 
+
 void AuthorState::initFonts()
 {
     if(!this->font.loadFromFile("font/Contb.ttf"))
@@ -15,6 +16,7 @@ AuthorState::AuthorState(RenderWindow* app ,  stack<State*> *states)
     this->buttons["BACK_TO_MENU_STATE"] = new Button(0,0, 150 , 50 ,
                                      &this->font , "Back to Menu" , Color(70,70,70,200)
                                  ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
+
 
 }
 
@@ -66,3 +68,6 @@ void AuthorState::render(RenderTarget* target )
        target = this->app;
     this->renderButtons(target);
 }
+
+
+

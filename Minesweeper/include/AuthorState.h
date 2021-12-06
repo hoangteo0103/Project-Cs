@@ -4,7 +4,6 @@
 #include "Button.h"
 #include "GameState.h"
 
-
 class AuthorState :
     public State
 {
@@ -12,6 +11,8 @@ private:
 
     map<string, Button* > buttons;
     Font font ;
+    Texture texture ;
+    Sprite background;
     void initFonts();
     void initButtons();
 
@@ -27,4 +28,5 @@ public:
     void renderButtons(RenderTarget* target = NULL) ;
 
 };
-#endif
+
+#endif // AUTHORSTATE_H_INCLUDED

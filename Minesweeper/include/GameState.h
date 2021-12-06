@@ -62,6 +62,8 @@ private:
     ostringstream ssTime ;
     map<string, Button* > buttons;
     Font font ;
+    Texture texture ;
+    Sprite background;
     bool isUpdated  ;
     bool ok ;
     int sizeX , sizeY ;
