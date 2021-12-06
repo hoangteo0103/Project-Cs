@@ -168,6 +168,37 @@ void Board::openNeighbour(int u,int v)
         this->openNeighbour(u, v + 1);
     }
 }
+void Board::openBomb(int u ,int v)
+{
+    if(!( grid[u][v] >=1 &&grid[u][v] <= 8 )) return  ;
+    int numb = grid[u][v] ;
+    for(int dirx = - 1 ; dirx <=1 ; dirx ++)
+        for(int diry = -1 ; diry <=1 ; diry ++ )
+    {
+        int x = u + dirx ;
+        int y = v + diry ;
+        if(grid[x][y] == 9 && sgrid[x][y] == 11)
+        numb--;
+        if(sgrid[x][y] == 11 && grid[x][y] !=9)
+            continue ;
+    }
+    if(numb > 0 )
+    {
+        this->isLose = true;
+        return ;
+    }
+    for(int dirx = - 1 ; dirx <=1 ; dirx ++)
+        for(int diry = -1 ; diry <=1 ; diry ++ )
+    {
+        int x = u + dirx ;
+        int y = v + diry ;
+        if(x < 0 || x > this->sizeX || y < 0 || y > this->sizeY) continue ;
+        if(onDisplay[x][y]) continue ;
+        if(grid[x][y] == 9) continue ;
+        sgrid[x][y] = grid[x][y] ;
+        onDisplay[x][y] = true  ;
+    }
+}
 void Board::update(Vector2f mousePosView)
 {
     this->checkWin();
@@ -191,7 +222,10 @@ void Board::update(Vector2f mousePosView)
                 {
                     x = i, y = j ;
                     if(onDisplay[x][y])
+                    {
+                        this->openBomb(x , y ) ;
                         continue ;
+                    }
                     if(grid[x][y] == 9)
                     {
                         sgrid[x][y] = 9 ;
