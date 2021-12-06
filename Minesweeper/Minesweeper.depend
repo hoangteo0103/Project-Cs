@@ -640,10 +640,10 @@
 
 1638286593 .h"
 
-1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\board.cpp
+1638628102 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\board.cpp
 	"Board.h"
 
-1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\board.h
+1638628102 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\board.h
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<SFML/System.hpp>
@@ -690,7 +690,7 @@
 1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\playagainstate.h
 	"Button.h"
 
-1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\mainmenustate.h
+1638628102 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\mainmenustate.h
 	"LeaderboardState.h"
 	"SelectionState.h"
 	"GameState.h"
@@ -714,19 +714,19 @@
 1638327869 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\main.cpp
 	"Game.h"
 
-1638328459 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\mainmenustate.cpp
+1638788305 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\mainmenustate.cpp
 	"MainMenuState.h"
 
 1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\pausemenu.cpp
 	"PauseMenu.h"
 
-1638328684 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\playagainstate.cpp
+1638628103 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\playagainstate.cpp
 	"PlayAgainState.h"
 
 1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\state.cpp
 	"State.h"
 
-1638329050 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\winstate.cpp
+1638628103 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\winstate.cpp
 	"WinState.h"
 
 1525812018 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\sfml-2.5.1\include\sfml\graphics.hpp
@@ -1138,9 +1138,110 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\losestate.cpp
+1638628102 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\losestate.cpp
 	"LoseState.h"
 
 1638328459 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\selectionstate.cpp
 	"SelectionState.h"
+
+1638795626 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\authorstate.cpp
+	"AuthorState.h"
+
+1638795224 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\authorstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\state.h
+	"Board.h"
+
+1638628102 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\board.h
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<time.h>
+	<bits/stdc++.h>
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\button.h
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<time.h>
+	<bits/stdc++.h>
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\gamestate.h
+	"State.h"
+	"Button.h"
+	"PauseMenu.h"
+	"WinState.h"
+	"LoseState.h"
+	"PlayAgainState.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\pausemenu.h
+	"Button.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\winstate.h
+	"Button.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\losestate.h
+	"Button.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\playagainstate.h
+	"Button.h"
+
+1638628102 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\board.cpp
+	"Board.h"
+
+1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\button.cpp
+	"Button.h"
+
+1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\game.cpp
+	"Game.h"
+	"MainMenuState.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\game.h
+	"GameState.h"
+
+1638796158 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\mainmenustate.h
+	"LeaderboardState.h"
+	"SelectionState.h"
+	"AuthorState.h"
+	"GameState.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\leaderboardstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638327868 e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\include\selectionstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638328459 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\gamestate.cpp
+	"GameState.h"
+
+1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\leaderboardstate.cpp
+	"Leaderboardstate.h"
+
+1638628102 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\losestate.cpp
+	"LoseState.h"
+
+1638327869 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\main.cpp
+	"Game.h"
+
+1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\pausemenu.cpp
+	"PauseMenu.h"
+
+1638628103 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\playagainstate.cpp
+	"PlayAgainState.h"
+
+1638328459 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\selectionstate.cpp
+	"SelectionState.h"
+
+1638327868 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\state.cpp
+	"State.h"
+
+1638628103 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\winstate.cpp
+	"WinState.h"
 

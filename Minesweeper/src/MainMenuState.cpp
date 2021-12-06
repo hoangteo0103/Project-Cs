@@ -7,7 +7,7 @@ void MainMenuState::initFonts()
 
     }
 
-    t.loadFromFile("images/background.jpg") ;
+    t.loadFromFile("images/background_menu.png") ;
     this->background.setTexture(t) ;
 }
 void MainMenuState::initButtons()
@@ -86,6 +86,10 @@ void MainMenuState::updateButtons()
     {
         if(this->checkSaved())
             this->states->push(new GameState(this->app, this->states, 0, 0, 0,  1)) ;
+    }
+    if(this->buttons["AUTHOR_STATE_BTN"]->isPressed())
+    {
+        this->states->push(new AuthorState(this->app, this->states)) ;
     }
 }
 
