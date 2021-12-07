@@ -151,7 +151,6 @@ void SelectionState::updateCustom()
     this->buttons["HEIGHT"]->updateText(to_string(this->sizeY));
     this->buttons["WIDTH"]->updateText(to_string(this->sizeX));
     int MaxBomb = this->sizeX * this->sizeY - 1 ;
-
     if(this->buttons["DECREASE_BOMB_1"]->isPressed() && this->numberOfBombs > 1)
     {
         this->numberOfBombs--;
@@ -211,9 +210,8 @@ void SelectionState::update()
     this->updateKeyBinds();
     this->updateButtons() ;
 
-    system("cls") ;
-    cout << this->sizeX << ' ' << this->sizeY << endl;
-    cout << mousePosView.x <<' ' << mousePosView.y <<endl;
+    //system("cls") ;
+    //cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 
 }
 void SelectionState::renderButtons(RenderTarget* target )

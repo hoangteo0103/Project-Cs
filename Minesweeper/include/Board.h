@@ -28,6 +28,7 @@ protected:
 public :
     Board();
     virtual ~Board() ;
+    int Rand(int l ,int r) ;
     virtual void checkWin();
     virtual void loadFromFile() ;
     virtual void save() ;

@@ -1,4 +1,5 @@
 #include "Board.h"
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 void Board::loadFromFile()
 {
 
@@ -41,11 +42,19 @@ void Board::initBoard(bool saved )
         {
             onDisplay[i][j] = false;
             sgrid[i][j]=10;
-            if (rand()%5==0&& this->numberOfBombs > numNow)
-                grid[i][j]=9, numNow++;
-            else
-                grid[i][j]=0;
+            grid[i][j]=0;
         }
+    int bomb_now = 0 ;
+    do{
+        int now_x = rng() % this->sizeX + 1 ;
+        int now_y = rng() % this->sizeY + 1;
+        if(grid[now_x][now_y]==0)
+        {
+        grid[now_x][now_y] = 9 ;
+        bomb_now++;
+        }
+    }
+    while(bomb_now < this->numberOfBombs) ;
     for (int i=1; i<=this->sizeX; i++)
         for (int j=1; j<=this->sizeY; j++)
         {

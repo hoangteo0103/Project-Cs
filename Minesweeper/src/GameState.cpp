@@ -231,8 +231,8 @@ void GameState::update()
         ssTime.str("");
         ssTime <<"Time " <<t;
         this->lblTime.setString(ssTime.str());
-        system("cls") ;
-        cout << mousePosView.x <<' ' << mousePosView.y <<endl;
+        //system("cls") ;
+        //cout << mousePosView.x <<' ' << mousePosView.y <<endl;
     }
     else
     {
