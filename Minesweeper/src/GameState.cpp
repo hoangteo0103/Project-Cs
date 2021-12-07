@@ -38,16 +38,16 @@ GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int s
     // Init time
 
     this->lblTime.setCharacterSize(30);
-    this->lblTime.setPosition({400, 0 }) ;
+    this->lblTime.setPosition({400, 30 }) ;
     this->lblTime.setFillColor(Color::White);
     this->lblTime.setFont(font);
     this->ssTime<<"";
     this->board.initBoard(saved) ;
     // Init Buttons
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(1000, 0, 200, 50,
-            &this->font, "Back to Menu", Color(70,70,70,200)
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(820, 655, 200, 40,
+            &this->font, "MENU", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["PAUSE_MENU_STATE"] = new Button(1000, 50, 200, 50,
+    this->buttons["PAUSE_MENU_STATE"] = new Button(1030, 655, 200, 40,
             &this->font, "PAUSE", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 }
@@ -260,6 +260,7 @@ void GameState::render(RenderTarget* target )
         return ;
     if (!target)
         target = this->app;
+    target->draw(this->background);
     this->board.render(target);
     this->renderButtons(target);
     target->draw(this->lblTime);

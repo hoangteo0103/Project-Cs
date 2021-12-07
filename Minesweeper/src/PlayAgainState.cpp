@@ -22,7 +22,7 @@ void PlayAgainState::initState(RenderWindow& app)
         Vector2f(
             static_cast<float> (app.getSize().x)  - 50.f,
             static_cast<float> (app.getSize().y)/4.f));
-    this->container.setFillColor(Color::Blue);
+    this->container.setFillColor(Color::Black);
     this->container.setPosition(
         Vector2f(15.f , static_cast<float>(app.getSize().y) / 2.f - this->container.getSize().y/2.f));
     // Init buttons
@@ -36,7 +36,7 @@ void PlayAgainState::initState(RenderWindow& app)
     // Init Text
     this->menutext.setFont(font);
     this->menutext.setFillColor(Color(255,255,255,200));
-    this->menutext.setCharacterSize(30);
+    this->menutext.setCharacterSize(35);
     this->menutext.setString("Do you want to play again");
     this->menutext.setPosition(this->container.getPosition().x + this->container.getSize().x/2.f -  this->menutext.getGlobalBounds().width/2.f ,
         this->container.getPosition().y + 20.f);

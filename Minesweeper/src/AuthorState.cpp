@@ -7,15 +7,17 @@ void AuthorState::initFonts()
     {
 
     }
+    texture.loadFromFile("images/author_state.png") ;
+    this->background.setTexture(texture) ;
 }
 AuthorState::AuthorState(RenderWindow* app ,  stack<State*> *states)
     :State(app,states)
 {
 
     this->initFonts() ;
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(0,0, 150 , 50 ,
-                                     &this->font , "Back to Menu" , Color(70,70,70,200)
-                                 ,Color(150,150,150,255) , Color(20,20,20,200) ) ;
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(410, 628, 450 , 50 ,
+                                     &this->font , "Back to Menu" , Color(0, 0, 0, 0)
+                                 ,Color(10, 10, 10, 10) , Color(20,20,20,200) ) ;
 
 
 }
@@ -66,6 +68,8 @@ void AuthorState::render(RenderTarget* target )
 {
     if (!target)
        target = this->app;
+
+    target->draw(this->background);
     this->renderButtons(target);
 }
 

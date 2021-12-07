@@ -25,7 +25,7 @@ LeaderboardState::LeaderboardState(RenderWindow* app ,  stack<State*> *states)
     {
         tmp.push_back({bomb,time});
     }
-    int x = 400 , y = 200 ;
+    int x = 500 , y = 200 ;
     for(int i = 0 ; i < tmp.size() ; i++ )
     {
         string dm = to_string(i);

@@ -12,7 +12,8 @@ private:
 
     map<string, Button* > buttons;
     Font font ;
-
+    Texture texture ;
+    Sprite background;
     int sizeX , sizeY ;
     int numberOfBombs;
     void initFonts();

@@ -8,24 +8,26 @@ void SelectionState::initFonts()
     {
 
     }
+    texture.loadFromFile("images/selection_back.png") ;
+    this->background.setTexture(texture) ;
 }
 SelectionState::SelectionState(RenderWindow* app,  stack<State*> *states)
     :State(app,states)
 {
     this->initFonts() ;
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(0,0, 150, 50,
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(300, 600, 150, 45,
             &this->font, "Back to Menu", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
-    this->buttons["BEGINNER_STATE"] = new Button(150, 150, 150, 50,
+    this->buttons["BEGINNER_STATE"] = new Button(220, 197, 150, 45,
             &this->font, "Beginner", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
-    this->buttons["INTERMEDIATE_STATE"] = new Button(150, 210, 150, 50,
+    this->buttons["INTERMEDIATE_STATE"] = new Button(275, 255, 150, 45,
             &this->font, "Intermediate", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
-    this->buttons["EXPERT_STATE"] = new Button(150, 270, 150, 50,
+    this->buttons["EXPERT_STATE"] = new Button(320, 315, 150, 45,
             &this->font, "Expert", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
@@ -99,6 +101,7 @@ void SelectionState::render(RenderTarget* target )
 {
     if (!target)
         target = this->app;
+    target->draw(this->background);
     this->renderButtons(target);
 }
 
