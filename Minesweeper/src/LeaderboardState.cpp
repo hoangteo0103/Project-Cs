@@ -7,7 +7,7 @@ void LeaderboardState::initFonts()
     {
 
     }
-    texture.loadFromFile("images/leader_back.png") ;
+    texture.loadFromFile("images/new_high_back.png") ;
     this->background.setTexture(texture) ;
 }
 LeaderboardState::LeaderboardState(RenderWindow* app ,  stack<State*> *states)
