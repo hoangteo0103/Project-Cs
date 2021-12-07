@@ -21,8 +21,8 @@ void Board::loadFromFile()
         for(int j = 1  ; j <= this->sizeY ; j++)
             ifs >> onDisplay[i][j] ;
     }
-    this->startPos_x = 600 - (this->sizeX * 32) / 2;
-    this->startPos_y = 360 - (this->sizeY * 32) / 2;
+    this->startPos_x = 608 - (this->sizeX * 32) / 2;
+    this->startPos_y = 312 - (this->sizeY * 30) / 2;
 }
 void Board::initBoard(bool saved )
 {
@@ -70,8 +70,8 @@ void Board::initBoard(bool saved )
                 n++;
             grid[i][j]=n;
         }
-    this->startPos_x = 600 - (this->sizeX * 32) / 2;
-    this->startPos_y = 360 - (this->sizeY * 32) / 2;
+    this->startPos_x = 608 - (this->sizeX * 32) / 2;
+    this->startPos_y = 312 - (this->sizeY * 30) / 2;
 }
 void Board::save()
 {
@@ -101,8 +101,8 @@ void Board::initSize(int width, int height, int numberOfBombs)
 
     this->sizeX = width ;
     this->sizeY = height ;
-    this->startPos_x = 600 - (this->sizeX * 32) / 2;
-    this->startPos_y = 360 - (this->sizeY * 32) / 2;
+    this->startPos_x = 608 - (this->sizeX * 32) / 2;
+    this->startPos_y = 312 - (this->sizeY * 30) / 2;
     this->numberOfBombs = numberOfBombs ;
 }
 Board::Board()

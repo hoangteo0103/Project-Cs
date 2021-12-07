@@ -7,7 +7,7 @@ void MainMenuState::initFonts()
 
     }
 
-    t.loadFromFile("images/back_main.png") ;
+    t.loadFromFile("images/mainmenu.png") ;
     this->background.setTexture(t) ;
 }
 void MainMenuState::initButtons()

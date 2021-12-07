@@ -8,77 +8,77 @@ void SelectionState::initFonts()
     {
 
     }
-    texture.loadFromFile("images/selection_back.png") ;
+    texture.loadFromFile("images/select1.png") ;
     this->background.setTexture(texture) ;
 }
 void SelectionState::initCustom()
 {
-    this->buttons["HEIGHT"] = new Button(340, 400, 150, 45,
+    this->buttons["HEIGHT"] = new Button(720, 200, 50, 50,
             &this->font, "10", Color(70,70,70,200)
             ,Color(70,70,70,200), Color(70,70,70,200) ) ;
-    this->buttons["WIDTH"] = new Button(340, 460, 150, 45,
+    this->buttons["WIDTH"] = new Button(720, 260, 50, 50,
             &this->font, "10", Color(70,70,70,200)
             ,Color(70,70,70,200), Color(70,70,70,200) ) ;
-    this->buttons["BOMB"] = new Button(340, 520, 150, 45,
+    this->buttons["BOMB"] = new Button(720, 320, 50, 50,
             &this->font, "10", Color(70,70,70,200)
             ,Color(70,70,70,200), Color(70,70,70,200) ) ;
 
-    this->buttons["CUSTOM_STATE"] = new Button(340, 580, 150, 45,
+    this->buttons["CUSTOM_STATE"] = new Button(720, 380, 150, 45,
             &this->font, "CUSTOM", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["DECREASE_HEIGHT_1"] = new Button(180, 400, 150, 45,
+    this->buttons["DECREASE_HEIGHT_1"] = new Button(665, 200, 50, 50,
             &this->font, "-1", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["DECREASE_HEIGHT_5"] = new Button(20, 400, 150, 45,
+    this->buttons["DECREASE_HEIGHT_5"] = new Button(610, 200, 50, 50,
             &this->font, "-5", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["DECREASE_WIDTH_1"] = new Button(180, 460, 150, 45,
+    this->buttons["DECREASE_WIDTH_1"] = new Button(665, 260, 50, 50,
             &this->font, "-1", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["DECREASE_WIDTH_5"] = new Button(20, 460, 150, 45,
+    this->buttons["DECREASE_WIDTH_5"] = new Button(610, 260, 50, 50,
             &this->font, "-5", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["INCREASE_HEIGHT_1"] = new Button(500, 400, 150, 45,
+    this->buttons["INCREASE_HEIGHT_1"] = new Button(775, 200, 50, 50,
             &this->font, "+1", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["INCREASE_HEIGHT_5"] = new Button(660, 400, 150, 45,
+    this->buttons["INCREASE_HEIGHT_5"] = new Button(830, 200, 50, 50,
             &this->font, "+5", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["INCREASE_WIDTH_1"] = new Button(500, 460, 150, 45,
+    this->buttons["INCREASE_WIDTH_1"] = new Button(775, 260, 50, 50,
             &this->font, "+1", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["INCREASE_WIDTH_5"] = new Button(660, 460, 150, 45,
+    this->buttons["INCREASE_WIDTH_5"] = new Button(830, 260, 50, 50,
             &this->font, "+5", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["INCREASE_BOMB_1"] = new Button(500, 520, 150, 45,
+    this->buttons["INCREASE_BOMB_1"] = new Button(775, 320, 50, 50,
             &this->font, "+1", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["INCREASE_BOMB_5"] = new Button(660, 520, 150, 45,
+    this->buttons["INCREASE_BOMB_5"] = new Button(830, 320, 50, 50,
             &this->font, "+5", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["DECREASE_BOMB_1"] = new Button(180, 520, 150, 45,
+    this->buttons["DECREASE_BOMB_1"] = new Button(665, 320, 50, 50,
             &this->font, "-1", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-    this->buttons["DECREASE_BOMB_5"] = new Button(20, 520, 150, 45,
+    this->buttons["DECREASE_BOMB_5"] = new Button(610, 320, 50, 50,
             &this->font, "-5", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 }
 void SelectionState::initButtons()
 {
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(500, 630, 150, 45,
-            &this->font, "Back to Menu", Color(70,70,70,200)
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(374, 580, 450, 50,
+            &this->font, "Back to Menu", Color(0,0,0,0)
+            ,Color(10,10,10, 10), Color(20,20,20,200) ) ;
+
+    this->buttons["BEGINNER_STATE"] = new Button(220, 200, 350, 50,
+            &this->font, "Beginner (10 x 10, 10 bombs)", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
-    this->buttons["BEGINNER_STATE"] = new Button(220, 197, 150, 45,
-            &this->font, "Beginner", Color(70,70,70,200)
+    this->buttons["INTERMEDIATE_STATE"] = new Button(220, 260, 350, 50,
+            &this->font, "Intermediate (16 x 16, 40 bombs)", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
-    this->buttons["INTERMEDIATE_STATE"] = new Button(275, 255, 150, 45,
-            &this->font, "Intermediate", Color(70,70,70,200)
-            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
-
-    this->buttons["EXPERT_STATE"] = new Button(320, 315, 150, 45,
-            &this->font, "Expert", Color(70,70,70,200)
+    this->buttons["EXPERT_STATE"] = new Button(220, 320, 350, 50,
+            &this->font, "Expert (30 x 16, 99 bombs)", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
     this->initCustom() ;
 }
@@ -131,7 +131,7 @@ void SelectionState::updateCustom()
     {
         this->sizeX-=5;
     }
-    if(this->buttons["INCREASE_HEIGHT_1"]->isPressed() && this->sizeY < 30)
+    if(this->buttons["INCREASE_HEIGHT_1"]->isPressed() && this->sizeY < 20)
     {
         this->sizeY++;
     }
@@ -139,11 +139,11 @@ void SelectionState::updateCustom()
     {
         this->sizeX++;
     }
-    if(this->buttons["INCREASE_HEIGHT_5"]->isPressed() && this->sizeY <=25)
+    if(this->buttons["INCREASE_HEIGHT_5"]->isPressed() && this->sizeY < 20)
     {
         this->sizeY+=5;
     }
-    if(this->buttons["INCREASE_WIDTH_5"]->isPressed() && this->sizeX <=25)
+    if(this->buttons["INCREASE_WIDTH_5"]->isPressed() && this->sizeX <= 25)
     {
         this->sizeX+=5;
     }

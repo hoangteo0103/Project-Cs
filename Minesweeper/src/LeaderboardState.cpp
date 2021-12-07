@@ -7,7 +7,7 @@ void LeaderboardState::initFonts()
     {
 
     }
-    texture.loadFromFile("images/new_high_back.png") ;
+    texture.loadFromFile("images/highscore.png") ;
     this->background.setTexture(texture) ;
 }
 LeaderboardState::LeaderboardState(RenderWindow* app ,  stack<State*> *states)
@@ -25,7 +25,7 @@ LeaderboardState::LeaderboardState(RenderWindow* app ,  stack<State*> *states)
     {
         tmp.push_back({bomb,time});
     }
-    int x = 500 , y = 200 ;
+    int x = 450 , y = 220 ;
     for(int i = 0 ; i < tmp.size() ; i++ )
     {
         string dm = to_string(i);

@@ -7,7 +7,7 @@ void AuthorState::initFonts()
     {
 
     }
-    texture.loadFromFile("images/author_state.png") ;
+    texture.loadFromFile("images/author.png") ;
     this->background.setTexture(texture) ;
 }
 AuthorState::AuthorState(RenderWindow* app ,  stack<State*> *states)
