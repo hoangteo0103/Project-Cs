@@ -11,11 +11,61 @@ void SelectionState::initFonts()
     texture.loadFromFile("images/selection_back.png") ;
     this->background.setTexture(texture) ;
 }
-SelectionState::SelectionState(RenderWindow* app,  stack<State*> *states)
-    :State(app,states)
+void SelectionState::initCustom()
 {
-    this->initFonts() ;
-    this->buttons["BACK_TO_MENU_STATE"] = new Button(300, 600, 150, 45,
+    this->buttons["HEIGHT"] = new Button(340, 400, 150, 45,
+            &this->font, "10", Color(70,70,70,200)
+            ,Color(70,70,70,200), Color(70,70,70,200) ) ;
+    this->buttons["WIDTH"] = new Button(340, 460, 150, 45,
+            &this->font, "10", Color(70,70,70,200)
+            ,Color(70,70,70,200), Color(70,70,70,200) ) ;
+    this->buttons["BOMB"] = new Button(340, 520, 150, 45,
+            &this->font, "10", Color(70,70,70,200)
+            ,Color(70,70,70,200), Color(70,70,70,200) ) ;
+
+    this->buttons["CUSTOM_STATE"] = new Button(340, 580, 150, 45,
+            &this->font, "CUSTOM", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["DECREASE_HEIGHT_1"] = new Button(180, 400, 150, 45,
+            &this->font, "-1", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["DECREASE_HEIGHT_5"] = new Button(20, 400, 150, 45,
+            &this->font, "-5", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["DECREASE_WIDTH_1"] = new Button(180, 460, 150, 45,
+            &this->font, "-1", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["DECREASE_WIDTH_5"] = new Button(20, 460, 150, 45,
+            &this->font, "-5", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["INCREASE_HEIGHT_1"] = new Button(500, 400, 150, 45,
+            &this->font, "+1", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["INCREASE_HEIGHT_5"] = new Button(660, 400, 150, 45,
+            &this->font, "+5", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["INCREASE_WIDTH_1"] = new Button(500, 460, 150, 45,
+            &this->font, "+1", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["INCREASE_WIDTH_5"] = new Button(660, 460, 150, 45,
+            &this->font, "+5", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["INCREASE_BOMB_1"] = new Button(500, 520, 150, 45,
+            &this->font, "+1", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["INCREASE_BOMB_5"] = new Button(660, 520, 150, 45,
+            &this->font, "+5", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["DECREASE_BOMB_1"] = new Button(180, 520, 150, 45,
+            &this->font, "-1", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->buttons["DECREASE_BOMB_5"] = new Button(20, 520, 150, 45,
+            &this->font, "-5", Color(70,70,70,200)
+            ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+}
+void SelectionState::initButtons()
+{
+    this->buttons["BACK_TO_MENU_STATE"] = new Button(500, 630, 150, 45,
             &this->font, "Back to Menu", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
 
@@ -30,6 +80,15 @@ SelectionState::SelectionState(RenderWindow* app,  stack<State*> *states)
     this->buttons["EXPERT_STATE"] = new Button(320, 315, 150, 45,
             &this->font, "Expert", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
+    this->initCustom() ;
+}
+SelectionState::SelectionState(RenderWindow* app,  stack<State*> *states)
+    :State(app,states)
+{
+    this->sizeX = this->sizeY = 10 ;
+    this->numberOfBombs = 10 ;
+    this->initFonts() ;
+    this->initButtons()  ;
 
 }
 
@@ -48,6 +107,70 @@ void SelectionState::updateKeyBinds()
 void SelectionState::endState()
 {
     cout <<"End MainMenu"<<endl;
+}
+void SelectionState::updateCustom()
+{
+    if(this->buttons["CUSTOM_STATE"]->isPressed())
+    {
+        this->states->push(new GameState(this->app, this->states, this->sizeX, this->sizeY, this->numberOfBombs,  0 )) ;
+        this->quit = true ;
+    }
+    if(this->buttons["DECREASE_HEIGHT_1"]->isPressed() && this->sizeY > 5)
+    {
+        this->sizeY--;
+    }
+    if(this->buttons["DECREASE_WIDTH_1"]->isPressed() && this->sizeX > 5)
+    {
+        this->sizeX--;
+    }
+    if(this->buttons["DECREASE_HEIGHT_5"]->isPressed() && this->sizeY >=10)
+    {
+        this->sizeY-=5;
+    }
+    if(this->buttons["DECREASE_WIDTH_5"]->isPressed() && this->sizeX >=10)
+    {
+        this->sizeX-=5;
+    }
+    if(this->buttons["INCREASE_HEIGHT_1"]->isPressed() && this->sizeY < 30)
+    {
+        this->sizeY++;
+    }
+    if(this->buttons["INCREASE_WIDTH_1"]->isPressed() && this->sizeX  < 30)
+    {
+        this->sizeX++;
+    }
+    if(this->buttons["INCREASE_HEIGHT_5"]->isPressed() && this->sizeY <=25)
+    {
+        this->sizeY+=5;
+    }
+    if(this->buttons["INCREASE_WIDTH_5"]->isPressed() && this->sizeX <=25)
+    {
+        this->sizeX+=5;
+    }
+
+    this->buttons["HEIGHT"]->updateText(to_string(this->sizeY));
+    this->buttons["WIDTH"]->updateText(to_string(this->sizeX));
+    int MaxBomb = this->sizeX * this->sizeY - 1 ;
+
+    if(this->buttons["DECREASE_BOMB_1"]->isPressed() && this->numberOfBombs > 1)
+    {
+        this->numberOfBombs--;
+    }
+    if(this->buttons["DECREASE_BOMB_5"]->isPressed() && this->numberOfBombs >=6)
+    {
+        this->numberOfBombs-=5;
+    }
+    if(this->buttons["INCREASE_BOMB_1"]->isPressed() && this->numberOfBombs < MaxBomb)
+    {
+        this->numberOfBombs++;
+    }
+    if(this->buttons["INCREASE_BOMB_5"]->isPressed() && this->numberOfBombs + 5 <=MaxBomb)
+    {
+        this->numberOfBombs+=5;
+    }
+    this->buttons["BOMB"]->updateText(to_string(this->numberOfBombs));
+
+
 }
 void SelectionState::updateButtons()
 {
@@ -77,6 +200,8 @@ void SelectionState::updateButtons()
         this->states->push(new GameState(this->app, this->states, 30, 16, 99,  0 )) ;
         this->quit = true ;
     }
+    this->updateCustom() ;
+
 }
 
 void SelectionState::update()
@@ -87,6 +212,7 @@ void SelectionState::update()
     this->updateButtons() ;
 
     system("cls") ;
+    cout << this->sizeX << ' ' << this->sizeY << endl;
     cout << mousePosView.x <<' ' << mousePosView.y <<endl;
 
 }

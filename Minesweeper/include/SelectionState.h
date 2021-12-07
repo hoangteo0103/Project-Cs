@@ -9,7 +9,6 @@ class SelectionState :
 {
 private:
     Board board ;
-
     map<string, Button* > buttons;
     Font font ;
     Texture texture ;
@@ -18,12 +17,14 @@ private:
     int numberOfBombs;
     void initFonts();
     void initButtons();
+    void initCustom() ;
 
 public:
     SelectionState(RenderWindow* app, stack<State*> *states);
     virtual ~SelectionState();
     // Functions
     void updateKeyBinds();
+    void updateCustom() ;
     void updateButtons();
     void endState() ;
     void update() ;

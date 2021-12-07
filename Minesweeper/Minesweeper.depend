@@ -1248,3 +1248,107 @@
 1638807532 source:e:\hcmus\materials\first year\first semester\computer science i\final project (minesweeper)\project-cs\minesweeper\src\mainmenustate.cpp
 	"MainMenuState.h"
 
+1638860701 source:d:\project-cs-master\minesweeper\src\authorstate.cpp
+	"AuthorState.h"
+
+1638845219 d:\project-cs-master\minesweeper\include\authorstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638796724 d:\project-cs-master\minesweeper\include\state.h
+	"Board.h"
+
+1638796724 d:\project-cs-master\minesweeper\include\board.h
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<time.h>
+	<bits/stdc++.h>
+
+1638864572 d:\project-cs-master\minesweeper\include\button.h
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<time.h>
+	<bits/stdc++.h>
+
+1638845219 d:\project-cs-master\minesweeper\include\gamestate.h
+	"State.h"
+	"Button.h"
+	"PauseMenu.h"
+	"WinState.h"
+	"LoseState.h"
+	"PlayAgainState.h"
+
+1638796724 d:\project-cs-master\minesweeper\include\pausemenu.h
+	"Button.h"
+
+1638796724 d:\project-cs-master\minesweeper\include\winstate.h
+	"Button.h"
+
+1638860701 d:\project-cs-master\minesweeper\include\losestate.h
+	"Button.h"
+
+1638796724 d:\project-cs-master\minesweeper\include\playagainstate.h
+	"Button.h"
+
+1638796724 source:d:\project-cs-master\minesweeper\src\board.cpp
+	"Board.h"
+
+1638864572 source:d:\project-cs-master\minesweeper\src\button.cpp
+	"Button.h"
+
+1638796724 source:d:\project-cs-master\minesweeper\src\game.cpp
+	"Game.h"
+	"MainMenuState.h"
+
+1638796724 d:\project-cs-master\minesweeper\include\game.h
+	"GameState.h"
+
+1638796724 d:\project-cs-master\minesweeper\include\mainmenustate.h
+	"LeaderboardState.h"
+	"SelectionState.h"
+	"AuthorState.h"
+	"GameState.h"
+
+1638845219 d:\project-cs-master\minesweeper\include\leaderboardstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638863562 d:\project-cs-master\minesweeper\include\selectionstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638860701 source:d:\project-cs-master\minesweeper\src\gamestate.cpp
+	"GameState.h"
+
+1638860701 source:d:\project-cs-master\minesweeper\src\leaderboardstate.cpp
+	"Leaderboardstate.h"
+
+1638860701 source:d:\project-cs-master\minesweeper\src\losestate.cpp
+	"LoseState.h"
+
+1638796724 source:d:\project-cs-master\minesweeper\src\main.cpp
+	"Game.h"
+
+1638845219 source:d:\project-cs-master\minesweeper\src\mainmenustate.cpp
+	"MainMenuState.h"
+
+1638860701 source:d:\project-cs-master\minesweeper\src\pausemenu.cpp
+	"PauseMenu.h"
+
+1638860701 source:d:\project-cs-master\minesweeper\src\playagainstate.cpp
+	"PlayAgainState.h"
+
+1638864783 source:d:\project-cs-master\minesweeper\src\selectionstate.cpp
+	"SelectionState.h"
+
+1638796724 source:d:\project-cs-master\minesweeper\src\state.cpp
+	"State.h"
+
+1638796724 source:d:\project-cs-master\minesweeper\src\winstate.cpp
+	"WinState.h"
+
