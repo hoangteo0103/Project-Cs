@@ -201,6 +201,7 @@ void Board::openBomb(int u ,int v)
     {
         int x = u + dirx ;
         int y = v + diry ;
+        this->openNeighbour(x , y) ;
         if(x < 0 || x > this->sizeX || y < 0 || y > this->sizeY) continue ;
         if(onDisplay[x][y]) continue ;
         if(grid[x][y] == 9) continue ;
