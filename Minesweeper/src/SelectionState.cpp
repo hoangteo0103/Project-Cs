@@ -151,6 +151,7 @@ void SelectionState::updateCustom()
     this->buttons["HEIGHT"]->updateText(to_string(this->sizeY));
     this->buttons["WIDTH"]->updateText(to_string(this->sizeX));
     int MaxBomb = this->sizeX * this->sizeY - 1 ;
+    if(this->numberOfBombs > MaxBomb) this->numberOfBombs = MaxBomb ;
     if(this->buttons["DECREASE_BOMB_1"]->isPressed() && this->numberOfBombs > 1)
     {
         this->numberOfBombs--;

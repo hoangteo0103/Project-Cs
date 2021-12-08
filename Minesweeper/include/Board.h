@@ -18,7 +18,7 @@ protected:
     int w = 32 ;
     int x, y ;
     bool isLose , isWin;
-    bool onDisplay[50][50] ;
+    bool onDisplay[32][32] ;
     int sizeX , sizeY ;
     int startPos_x , startPos_y ;
     int numberOfBombs ;

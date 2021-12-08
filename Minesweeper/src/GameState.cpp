@@ -9,7 +9,6 @@ void GameState::Reset()
     this->paused = false ;
 }
 
-
 void GameState::initFonts()
 {
     if(!this->font.loadFromFile("font/Contb.ttf"))
