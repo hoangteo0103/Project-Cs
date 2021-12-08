@@ -21,11 +21,11 @@ void WinState::initState(RenderWindow& app)
         Vector2f(
             static_cast<float> (app.getSize().x)  - 50.f,
             static_cast<float> (app.getSize().y)/4.f));
-    this->container.setFillColor(Color::Blue);
+    this->container.setFillColor(Color::Black);
     this->container.setPosition(
         Vector2f(15.f , static_cast<float>(app.getSize().y) / 2.f - this->container.getSize().y/2.f));
     // Init buttons
-    this->buttons["OK"] = new Button(490, 350, 200, 50,
+    this->buttons["OK"] = new Button(540, 350, 200, 50,
             &this->font, "OK", Color(70,70,70,200)
             ,Color(150,150,150,255), Color(20,20,20,200) ) ;
     // Init Text
@@ -33,7 +33,7 @@ void WinState::initState(RenderWindow& app)
     this->menutext.setFillColor(Color(255,255,255,200));
     this->menutext.setCharacterSize(30);
     this->menutext.setString("WIN");
-    this->menutext.setPosition(this->container.getPosition().x + this->container.getSize().x/2.f -  this->menutext.getGlobalBounds().width/2.f ,
+    this->menutext.setPosition(this->container.getPosition().x + this->container.getSize().x/2.f -  this->menutext.getGlobalBounds().width/2.f + 10 ,
         this->container.getPosition().y + 20.f);
 }
 WinState::WinState()
