@@ -198,7 +198,10 @@ void Board::openBomb(int u ,int v)
         if(grid[x][y] == 9 && sgrid[x][y] == 11)
         numb--;
         if(sgrid[x][y] == 11 && grid[x][y] !=9)
-            return ;
+            {
+                this->isLose = true;
+                return ;
+            }
     }
     if(numb != 0 )
     {
