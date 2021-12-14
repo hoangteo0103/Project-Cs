@@ -7,6 +7,7 @@ void GameState::Reset()
     this->clock.Reset() ;
     this->board.initBoard(0) ;
     this->paused = false ;
+    this->previousTime = 0 ;
 }
 
 void GameState::initFonts()
@@ -42,6 +43,7 @@ GameState::GameState(RenderWindow* app,  stack<State*> *states, int sizeX, int s
     this->lblTime.setFont(font);
     this->ssTime<<"";
     this->board.initBoard(saved) ;
+    this->previousTime = this->board.getPreviousTime() ;
     // Init Buttons
     this->buttons["BACK_TO_MENU_STATE"] = new Button(1140, 600, 120, 50,
             &this->font, "MENU", Color(70,70,70,200)
@@ -151,7 +153,7 @@ void GameState::updateLeaderBoard()
     this->isUpdated = true ;
     int t = int(clock.GetElapsedSeconds());
     ofstream del("Save/PreviousBoard.ini") ;
-    int time_now = t;
+    int time_now = this->previousTime + t;
     if(this->sizeX == 10 && this->sizeY == 10 && this->numberOfBombs == 10 )
     {
         this->updateBeginner(time_now)  ;
@@ -167,9 +169,9 @@ void GameState::updateLeaderBoard()
     this->winState.initState(*app) ;
 }
 
-void GameState::saveBoard()
+void GameState::saveBoard(int t)
 {
-    this->board.save() ;
+    this->board.save(t) ;
 }
 
 void GameState::updateWinState()
@@ -240,8 +242,8 @@ void GameState::updateButtons()
     }
     if(this->buttons["BACK_TO_MENU_STATE"]->isPressed())
     {
-
-        this->saveBoard();
+        int t = this->previousTime +int(clock.GetElapsedSeconds());
+        this->saveBoard(t);
         this->quit = true ;
     }
     if(this->buttons["PAUSE_MENU_STATE"]->isPressed())
@@ -275,7 +277,7 @@ void GameState::update()
 
         this->updateButtons() ;
         this->board.update(this->mousePosView) ;
-        int t = int(clock.GetElapsedSeconds());
+        int t = this->previousTime +  int(clock.GetElapsedSeconds());
         ssTime.str("");
         ssTime <<"Time " <<t;
         this->lblTime.setString(ssTime.str());

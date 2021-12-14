@@ -22,6 +22,7 @@ protected:
     int sizeX , sizeY ;
     int startPos_x , startPos_y ;
     int numberOfBombs ;
+    int previousTime = 0 ;
     int grid[50][50];
     int sgrid[50][50];
 
@@ -31,7 +32,8 @@ public :
     int Rand(int l ,int r) ;
     virtual void checkWin();
     virtual void loadFromFile() ;
-    virtual void save() ;
+    virtual void save(int time_now ) ;
+    const int& getPreviousTime() const ;
     const bool& getLose() const ;
     const bool& getWin() const ;
     virtual void openBomb(int u , int v) ;

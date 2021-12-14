@@ -6,6 +6,7 @@ void Board::loadFromFile()
     this->isLose = false;
     this->isWin = false ;
     ifstream ifs("Save/PreviousBoard.ini") ;
+    ifs >> this->previousTime ;
     ifs >> this->sizeX  >> this->sizeY >> this->numberOfBombs ;
     for(int i = 1 ; i <= this->sizeX ; i++ )
     {
@@ -32,6 +33,7 @@ void Board::initBoard(bool saved )
         this->loadFromFile() ;
         return ;
     }
+    this->previousTime = 0  ;
     this->isLose = false;
     this->isWin = false ;
     memset(onDisplay, false, sizeof(onDisplay)) ;
@@ -82,9 +84,10 @@ void Board::initBoard(bool saved )
     this->startPos_x = 608 - (this->sizeX * 32) / 2;
     this->startPos_y = 312 - (this->sizeY * 30) / 2;
 }
-void Board::save()
+void Board::save(int time_now)
 {
     ofstream ofs("Save/PreviousBoard.ini") ;
+    ofs << time_now << endl;
     ofs << this->sizeX << ' ' << this->sizeY << ' ' << this->numberOfBombs << endl ;
     for(int i = 1 ; i <= this->sizeX ; i++ )
     {
@@ -139,6 +142,12 @@ void Board::checkWin()
     this->isWin = true ;
 
 }
+
+const int& Board::getPreviousTime() const
+{
+    return this->previousTime ;
+}
+
 const bool& Board::getLose() const
 {
     return this->isLose;

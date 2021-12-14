@@ -66,6 +66,7 @@ private:
     Sprite background;
     bool isUpdated  ;
     bool ok ;
+    int previousTime  ;
     int sizeX , sizeY ;
     int numberOfBombs;
     void initFonts();
@@ -76,7 +77,7 @@ public:
     virtual ~GameState();
     // Functions
     void Reset() ;
-    void saveBoard() ;
+    void saveBoard(int t ) ;
     void updatePaused();
     void updateKeyBinds();
     void updateBeginner(int time_now) ;
