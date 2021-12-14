@@ -123,7 +123,7 @@ void GameState::updateIntermediate(int time_now)
         tmp.push_back(time);
     }
     sort(tmp.begin(), tmp.end());
-    ofstream ofs("Leaderboard/leaderboardIntermediate.ini.ini") ;
+    ofstream ofs("Leaderboard/leaderboardIntermediate.ini") ;
     for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
     {
         ofs << tmp[i] << endl;
@@ -141,7 +141,7 @@ void GameState::updateExpert(int time_now)
         tmp.push_back(time);
     }
     sort(tmp.begin(), tmp.end());
-    ofstream ofs("Leaderboard/leaderboardExpert.ini.ini") ;
+    ofstream ofs("Leaderboard/leaderboardExpert.ini") ;
     for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
     {
         ofs << tmp[i] << endl;
