@@ -54,6 +54,9 @@
 		<Linker>
 			<Add directory="C:/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="Leaderboard/leaderboardBeginner.ini" />
+		<Unit filename="Leaderboard/leaderboardExpert.ini" />
+		<Unit filename="Leaderboard/leaderboardIntermediate.ini" />
 		<Unit filename="include/AuthorState.h" />
 		<Unit filename="include/Board.h" />
 		<Unit filename="include/Button.h" />
@@ -81,6 +84,10 @@
 		<Unit filename="src/State.cpp" />
 		<Unit filename="src/WinState.cpp" />
 		<Unit filename="src/main.cpp" />
-		<Extensions />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
