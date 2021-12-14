@@ -93,28 +93,77 @@ bool cmp(pair<int,int > a, pair<int,int > b )
         return a.first > b.first;
     return a.second < b.second ;
 }
+void GameState::updateBeginner(int time_now)
+{
+    ifstream ifs("Leaderboard/leaderboardBeginner.ini") ;
+    vector< int > tmp;
+    tmp.push_back(time_now) ;
+    int time ;
+    while(ifs >>  time)
+    {
+        tmp.push_back(time);
+    }
+    sort(tmp.begin(), tmp.end());
+    ofstream ofs("Leaderboard/leaderboardBeginner.ini") ;
+    for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
+    {
+        ofs << tmp[i] << endl;
+    }
+}
+void GameState::updateIntermediate(int time_now)
+{
+    ifstream ifs("Leaderboard/leaderboardIntermediate.ini") ;
+    vector< int > tmp;
+    tmp.push_back(time_now) ;
+    int time ;
+    while(ifs >>  time)
+    {
+        tmp.push_back(time);
+    }
+    sort(tmp.begin(), tmp.end());
+    ofstream ofs("Leaderboard/leaderboardIntermediate.ini.ini") ;
+    for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
+    {
+        ofs << tmp[i] << endl;
+    }
+}
+
+void GameState::updateExpert(int time_now)
+{
+    ifstream ifs("Leaderboard/leaderboardExpert.ini") ;
+    vector< int > tmp;
+    tmp.push_back(time_now) ;
+    int time ;
+    while(ifs >>  time)
+    {
+        tmp.push_back(time);
+    }
+    sort(tmp.begin(), tmp.end());
+    ofstream ofs("Leaderboard/leaderboardExpert.ini.ini") ;
+    for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
+    {
+        ofs << tmp[i] << endl;
+    }
+}
 
 void GameState::updateLeaderBoard()
 {
     this->isUpdated = true ;
     int t = int(clock.GetElapsedSeconds());
-    ifstream ifs("Leaderboard/leaderboard.ini") ;
-    int time_now = t;
-    int bomb_now = this->numberOfBombs ;
-    vector<pair<int,int > > tmp;
-    tmp.push_back({bomb_now, time_now}) ;
-    int bomb,time ;
-    while(ifs >> bomb >> time)
-    {
-        tmp.push_back({bomb, time});
-    }
-    sort(tmp.begin(), tmp.end(), cmp );
-    ofstream ofs("Leaderboard/leaderboard.ini") ;
-    for(int i = 0 ; i < min(10, (int) tmp.size()) ; i++)
-    {
-        ofs << tmp[i].first << ' ' << tmp[i].second << endl;
-    }
     ofstream del("Save/PreviousBoard.ini") ;
+    int time_now = t;
+    if(this->sizeX == 10 && this->sizeY == 10 && this->numberOfBombs == 10 )
+    {
+        this->updateBeginner(time_now)  ;
+    }
+    if(this->sizeX == 16 && this->sizeY == 16 && this->numberOfBombs == 40 )
+    {
+        this->updateIntermediate(time_now)  ;
+    }
+    if(this->sizeX == 30 && this->sizeY == 16 && this->numberOfBombs == 99 )
+    {
+        this->updateExpert(time_now)  ;
+    }
     this->winState.initState(*app) ;
 }
 

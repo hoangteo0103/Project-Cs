@@ -15,6 +15,9 @@ private:
     Sprite background;
     void initFonts();
     void initButtons();
+    void initBeginner();
+    void initIntermediate();
+    void initExpert();
 
 public:
     LeaderboardState(RenderWindow* app, stack<State*> *states);
