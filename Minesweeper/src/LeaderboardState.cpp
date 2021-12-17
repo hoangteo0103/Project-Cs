@@ -7,7 +7,7 @@ void LeaderboardState::initFonts()
     {
 
     }
-    texture.loadFromFile("images/highscore.png") ;
+    texture.loadFromFile("images/HIGHSCR.png") ;
     this->background.setTexture(texture) ;
 }
 void LeaderboardState::initBeginner()
