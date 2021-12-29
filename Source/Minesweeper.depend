@@ -1353,3 +1353,108 @@
 1638953394 source:d:\project-cs-master\minesweeper\src\winstate.cpp
 	"WinState.h"
 
+1640594861 source:d:\project-cs-master\source\src\authorstate.cpp
+	"AuthorState.h"
+
+1638845219 d:\project-cs-master\source\include\authorstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638796724 d:\project-cs-master\source\include\state.h
+	"Board.h"
+
+1640594118 d:\project-cs-master\source\include\board.h
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<time.h>
+	<bits/stdc++.h>
+
+1638864572 d:\project-cs-master\source\include\button.h
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<SFML/System.hpp>
+	<time.h>
+	<bits/stdc++.h>
+
+1639476066 d:\project-cs-master\source\include\gamestate.h
+	"State.h"
+	"Button.h"
+	"PauseMenu.h"
+	"WinState.h"
+	"LoseState.h"
+	"PlayAgainState.h"
+
+1638796724 d:\project-cs-master\source\include\pausemenu.h
+	"Button.h"
+
+1638796724 d:\project-cs-master\source\include\winstate.h
+	"Button.h"
+
+1638860701 d:\project-cs-master\source\include\losestate.h
+	"Button.h"
+
+1638796724 d:\project-cs-master\source\include\playagainstate.h
+	"Button.h"
+
+1639736585 source:d:\project-cs-master\source\src\board.cpp
+	"Board.h"
+
+1638864572 source:d:\project-cs-master\source\src\button.cpp
+	"Button.h"
+
+1638796724 source:d:\project-cs-master\source\src\game.cpp
+	"Game.h"
+	"MainMenuState.h"
+
+1638796724 d:\project-cs-master\source\include\game.h
+	"GameState.h"
+
+1638796724 d:\project-cs-master\source\include\mainmenustate.h
+	"LeaderboardState.h"
+	"SelectionState.h"
+	"AuthorState.h"
+	"GameState.h"
+
+1639474220 d:\project-cs-master\source\include\leaderboardstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1638863562 d:\project-cs-master\source\include\selectionstate.h
+	"State.h"
+	"Button.h"
+	"GameState.h"
+
+1639484464 source:d:\project-cs-master\source\src\gamestate.cpp
+	"GameState.h"
+
+1639734932 source:d:\project-cs-master\source\src\leaderboardstate.cpp
+	"Leaderboardstate.h"
+
+1638860701 source:d:\project-cs-master\source\src\losestate.cpp
+	"LoseState.h"
+
+1639745517 source:d:\project-cs-master\source\src\main.cpp
+	"Game.h"
+	<conio.h>
+
+1638887729 source:d:\project-cs-master\source\src\mainmenustate.cpp
+	"MainMenuState.h"
+
+1638860701 source:d:\project-cs-master\source\src\pausemenu.cpp
+	"PauseMenu.h"
+
+1638953394 source:d:\project-cs-master\source\src\playagainstate.cpp
+	"PlayAgainState.h"
+
+1638953867 source:d:\project-cs-master\source\src\selectionstate.cpp
+	"SelectionState.h"
+
+1638796724 source:d:\project-cs-master\source\src\state.cpp
+	"State.h"
+
+1638953394 source:d:\project-cs-master\source\src\winstate.cpp
+	"WinState.h"
+
